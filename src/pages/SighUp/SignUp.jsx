@@ -1,15 +1,36 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
+	const { createUser, googlePopUp } = useContext(AuthContext);
+
+	const handleGooglePopUp = () => {
+		googlePopUp()
+			.then((res) => {
+				console.log(res.user);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
+	};
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		watch,
 	} = useForm();
-	const onSubmit = (data) => console.log(data);
-	console.log(errors);
+	const onSubmit = (data) => {
+		createUser(data.email, data.password).then((res) => {
+			console.log(res.user);
+		});
+	};
+	// console.log(errors);
+
+	const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
+	const password = watch('password');
 
 	return (
 		<div className="flex justify-center items-center my-20">
@@ -23,7 +44,7 @@ const SignUp = () => {
 				<input
 					type="text"
 					className="border py-2 w-full mb-3 pl-3"
-					placeholder="name"
+					placeholder="Name*"
 					{...register('name', {
 						required: true,
 						maxLength: 80,
@@ -33,7 +54,7 @@ const SignUp = () => {
 				<input
 					type="email"
 					className="border py-2 w-full mb-3 pl-3"
-					placeholder="Email"
+					placeholder="Email*"
 					{...register('email', {
 						required: true,
 					})}
@@ -42,20 +63,42 @@ const SignUp = () => {
 				<input
 					type="password"
 					className="border py-2 w-full mb-3 pl-3"
-					placeholder="Password"
+					placeholder="Password*"
 					{...register('password', {
 						required: true,
+						minLength: {
+							value: 6,
+							message:
+								'Password must be at least 6 characters long',
+						},
+						pattern: {
+							value: passwordRegex,
+							message:
+								'Password must contain at least one capital letter, one special character',
+						},
 					})}
 				/>
 
 				<input
 					type="password"
 					className="border py-2 w-full mb-3 pl-3"
-					placeholder="Confirm Password"
+					placeholder="Confirm Password*"
 					{...register('confirmPassword', {
-						required: true,
+						required: 'Confirm Password is required',
+						validate: (value) =>
+							value === password || 'Passwords do not match',
 					})}
 				/>
+
+				<p className="text-red-700 mb-3">
+					{errors.password && <p>{errors.password.message}</p>}
+				</p>
+
+				<p className="mb-3 mt-0 text-red-700">
+					{errors.confirmPassword && (
+						<p>{errors.confirmPassword.message}</p>
+					)}
+				</p>
 
 				<input
 					type="url"
@@ -77,6 +120,12 @@ const SignUp = () => {
 					type="submit"
 					value="Sign Up"
 				/>
+				<button
+					onClick={handleGooglePopUp}
+					className="btn btn-circle btn-outline"
+				>
+					G
+				</button>
 			</form>
 		</div>
 	);

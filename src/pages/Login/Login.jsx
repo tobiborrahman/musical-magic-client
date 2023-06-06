@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+	const { signIn } = useContext(AuthContext);
 	const [showPassword, setShowPassword] = useState(false);
 
 	const {
@@ -11,9 +13,17 @@ const Login = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-	const onSubmit = (data) => console.log(data);
+	const onSubmit = (data) => {
+		signIn(data.email, data.password)
+			.then((res) => {
+				console.log(res.user);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
+	};
 
-	console.log(errors);
+	// console.log(errors);
 
 	const handleTogglePassword = () => {
 		setShowPassword(!showPassword);
@@ -38,7 +48,7 @@ const Login = () => {
 				/>
 				<br />
 				<input
-					type={showPassword ? 'text' : 'password'}
+					type={showPassword ? 'password' : 'text'}
 					className="border py-2 w-full pl-3"
 					placeholder="Password"
 					onClick={handleTogglePassword}
@@ -47,7 +57,11 @@ const Login = () => {
 					})}
 				/>
 				<p className="mt-2" onClick={handleTogglePassword}>
-					{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+					{showPassword ? (
+						<FaEyeSlash className="text-2xl"></FaEyeSlash>
+					) : (
+						<FaEye className="text-2xl"></FaEye>
+					)}
 				</p>
 
 				<br />
