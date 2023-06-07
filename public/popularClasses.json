@@ -1,44 +1,62 @@
 [
 	{
+		"id": 1,
 		"title": "Guitar",
 		"description": "Learn to play the guitar with expert instructors.",
 		"image": "https://i.ibb.co/ZNN5wMn/electric-Guiter.jpg",
 		"totalStudents": 100,
-		"price": 19.99
+		"price": 19.99,
+		"instructorName": "John Smith",
+		"availableSeats": 100
 	},
 	{
+		"id": 2,
 		"title": "Piano",
 		"description": "Master the piano and create beautiful melodies.",
 		"image": "https://i.ibb.co/PWcV1f9/roth.jpg",
 		"totalStudents": 75,
-		"price": 24.99
+		"price": 24.99,
+		"instructorName": "Emily Davis",
+		"availableSeats": 75
 	},
 	{
+		"id": 3,
 		"title": "Drums",
 		"description": "Discover the rhythm and power of drumming.",
 		"image": "https://i.ibb.co/4Z6YwMr/drums.jpg",
 		"totalStudents": 50,
-		"price": 29.99
+		"price": 29.99,
+		"instructorName": "Mark Johnson",
+		"availableSeats": 50
 	},
 	{
+		"id": 4,
 		"title": "Violin",
 		"description": "Explore the elegance and versatility of the violin.",
 		"image": "https://i.ibb.co/hVMkg4N/violin1111111.jpg",
 		"totalStudents": 60,
-		"price": 22.99
+		"price": 22.99,
+		"instructorName": "Sophia Lee",
+		"availableSeats": 60
 	},
 	{
+		"id": 5,
 		"title": "Saxophone",
 		"description": "Immerse yourself in the soulful sounds of the saxophone.",
-		"image": " https://i.ibb.co/VpMj7Bh/saxophone.jpg",
+		"image": "https://i.ibb.co/VpMj7Bh/saxophone.jpg",
 		"totalStudents": 40,
-		"price": 27.99
+		"price": 27.99,
+		"instructorName": "Daniel Jackson",
+		"availableSeats": 40
 	},
 	{
+		"id": 6,
 		"title": "Trumpet",
 		"description": "Experience the bold and vibrant tones of the trumpet.",
 		"image": "https://i.ibb.co/GvBp9PG/trumpettttt.jpg",
 		"totalStudents": 55,
-		"price": 25.99
+		"price": 25.99,
+		"instructorName": "Olivia Wilson",
+		"availableSeats": 55
 	}
 ]

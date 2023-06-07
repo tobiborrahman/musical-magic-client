@@ -4,11 +4,15 @@ import Home from '../Home/Home/Home';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SighUp/SignUp';
 import Instructors from '../pages/Instructors/Instructors';
+import PrivateRoute from '../providers/PrivateRoute';
+import Classes from '../pages/Classes/Classes';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Main></Main>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: '/',
@@ -25,6 +29,14 @@ const router = createBrowserRouter([
 			{
 				path: '/instructors',
 				element: <Instructors></Instructors>,
+			},
+			{
+				path: '/classes',
+				element: (
+					<PrivateRoute>
+						<Classes></Classes>
+					</PrivateRoute>
+				),
 			},
 		],
 	},
