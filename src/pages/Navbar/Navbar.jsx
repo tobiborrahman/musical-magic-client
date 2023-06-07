@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<div className="flex justify-between items-center shadow-md py-3 text-[#0C4B65]  px-20">
 			<div>
@@ -45,12 +56,35 @@ const Navbar = () => {
 				</li>
 			</div>
 
-			<div>
-				<Link to="/login">
-					<button className="py-2 px-5 text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]">
-						Log In
-					</button>
-				</Link>
+			<div className="flex justify-center items-center">
+				{user && <p className="mr-2">{user?.displayName}</p>}
+
+				{user ? (
+					<Link to="/login">
+						<button
+							onClick={handleLogOut}
+							className="py-2 px-5 text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]"
+						>
+							Log Out
+						</button>
+					</Link>
+				) : (
+					<Link to="/login">
+						<button className="py-2 px-5 text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]">
+							Log In
+						</button>
+					</Link>
+				)}
+				<div>
+					{user ? (
+						<img
+							className="w-12 ml-2 rounded-full"
+							src={user?.photoURL}
+						/>
+					) : (
+						''
+					)}
+				</div>
 			</div>
 		</div>
 	);
