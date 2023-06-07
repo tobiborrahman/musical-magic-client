@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
-	const { createUser, googlePopUp } = useContext(AuthContext);
+	const { createUser, googlePopUp, updateUserProfile } =
+		useContext(AuthContext);
 
 	const handleGooglePopUp = () => {
 		googlePopUp()
@@ -23,8 +24,16 @@ const SignUp = () => {
 		watch,
 	} = useForm();
 	const onSubmit = (data) => {
+		console.log(data);
 		createUser(data.email, data.password).then((res) => {
-			console.log(res.user);
+			console.log('create user', res.user);
+			updateUserProfile(data.name, data.photoUrl)
+				.then((res) => {
+					console.log(res.user);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
 		});
 	};
 	// console.log(errors);

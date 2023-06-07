@@ -1,0 +1,44 @@
+[
+	{
+		"title": "Guitar",
+		"description": "Learn to play the guitar with expert instructors.",
+		"image": "https://i.ibb.co/ZNN5wMn/electric-Guiter.jpg",
+		"totalStudents": 100,
+		"price": 19.99
+	},
+	{
+		"title": "Piano",
+		"description": "Master the piano and create beautiful melodies.",
+		"image": "https://i.ibb.co/PWcV1f9/roth.jpg",
+		"totalStudents": 75,
+		"price": 24.99
+	},
+	{
+		"title": "Drums",
+		"description": "Discover the rhythm and power of drumming.",
+		"image": "https://i.ibb.co/4Z6YwMr/drums.jpg",
+		"totalStudents": 50,
+		"price": 29.99
+	},
+	{
+		"title": "Violin",
+		"description": "Explore the elegance and versatility of the violin.",
+		"image": "https://i.ibb.co/hVMkg4N/violin1111111.jpg",
+		"totalStudents": 60,
+		"price": 22.99
+	},
+	{
+		"title": "Saxophone",
+		"description": "Immerse yourself in the soulful sounds of the saxophone.",
+		"image": " https://i.ibb.co/VpMj7Bh/saxophone.jpg",
+		"totalStudents": 40,
+		"price": 27.99
+	},
+	{
+		"title": "Trumpet",
+		"description": "Experience the bold and vibrant tones of the trumpet.",
+		"image": "https://i.ibb.co/GvBp9PG/trumpettttt.jpg",
+		"totalStudents": 55,
+		"price": 25.99
+	}
+]

@@ -1,0 +1,56 @@
+[
+	{
+		"title": "Guitar",
+		"instructorName": "John Smith",
+		"description": "Learn to play the guitar with expert instructor John Smith.",
+		"image": "https://i.ibb.co/9bBgzQ7/man111.jpg",
+		"totalStudents": 100,
+		"price": 19.99,
+		"email": "johnsmith@example.com"
+	},
+	{
+		"title": "Piano",
+		"instructorName": "Emily Davis",
+		"description": "Master the piano with renowned instructor Emily Davis.",
+		"image": "https://i.ibb.co/zm9cQCw/man222.jpg",
+		"totalStudents": 75,
+		"price": 24.99,
+		"email": "emilydavis@example.com"
+	},
+	{
+		"title": "Drums",
+		"instructorName": "Mark Johnson",
+		"description": "Discover the rhythm and power of drumming with instructor Mark Johnson.",
+		"image": "https://i.ibb.co/S7194hZ/man333.jpg",
+		"totalStudents": 50,
+		"price": 29.99,
+		"email": "markjohnson@example.com"
+	},
+	{
+		"title": "Violin",
+		"instructorName": "Sophia Lee",
+		"description": "Explore the elegance and versatility of the violin with instructor Sophia Lee.",
+		"image": "https://i.ibb.co/k1m2bTy/man444.jpg",
+		"totalStudents": 60,
+		"price": 22.99,
+		"email": "sophialee@example.com"
+	},
+	{
+		"title": "Saxophone",
+		"instructorName": "Daniel Jackson",
+		"description": "Immerse yourself in the soulful sounds of the saxophone with instructor Daniel Jackson.",
+		"image": "https://i.ibb.co/gVgkJfw/man666.jpg",
+		"totalStudents": 40,
+		"price": 27.99,
+		"email": "danieljackson@example.com"
+	},
+	{
+		"title": "Trumpet",
+		"instructorName": "Olivia Wilson",
+		"description": "Experience the bold and vibrant tones of the trumpet with instructor Olivia Wilson.",
+		"image": "https://i.ibb.co/8MNtwb2/man555.jpg",
+		"totalStudents": 55,
+		"price": 25.99,
+		"email": "oliviawilson@example.com"
+	}
+]

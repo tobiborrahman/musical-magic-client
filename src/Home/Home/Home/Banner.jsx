@@ -22,10 +22,6 @@ const Banner = () => {
 						src="https://i.ibb.co/FD3msh6/drummer.jpg"
 						alt="Image 1"
 					/>
-					<div className="slide-text">
-						<h2>Title 1</h2>
-						<p>Description 1</p>
-					</div>
 				</SwiperSlide>
 				<SwiperSlide>
 					<img
