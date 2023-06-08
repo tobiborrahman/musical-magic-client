@@ -88,7 +88,7 @@ const AddClasses = () => {
 					type="text"
 					className="border py-2 w-full mb-3 pl-3"
 					placeholder="Status"
-					{...register('price', {})}
+					{...register('status', {})}
 				/>
 
 				<input
