@@ -24,17 +24,29 @@ const SignUp = () => {
 		watch,
 	} = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
-		createUser(data.email, data.password).then((res) => {
-			console.log('create user', res.user);
-			updateUserProfile(data.name, data.photoUrl)
-				.then((res) => {
-					console.log(res.user);
-				})
-				.catch((err) => {
-					console.log(err);
-				});
-		});
+		// console.log(data, data.email, data.password);
+		createUser(data.email, data.password)
+			.then((res) => {
+				console.log('create user', res.user);
+
+				updateUserProfile(data.name, data.photoUrl)
+					.then(() => {
+						const user = { name: data.name, email: data.email };
+						fetch('http://localhost:5000/users', {
+							method: 'POST',
+							headers: {
+								'content-type': 'application/json',
+							},
+							body: JSON.stringify(user),
+						});
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 	// console.log(errors);
 

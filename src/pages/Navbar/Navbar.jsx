@@ -47,12 +47,14 @@ const Navbar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link
-						className="mr-5 hover:text-[#C25934] font-bold duration-500"
-						to="/dashboard"
-					>
-						Dashboard
-					</Link>
+					{user && (
+						<Link
+							className="mr-5 hover:text-[#C25934] font-bold duration-500"
+							to="/dashboard"
+						>
+							Dashboard
+						</Link>
+					)}
 				</li>
 			</div>
 
