@@ -13,7 +13,7 @@ const Classes = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				setPopularClasses(data);
 			});
 	}, []);

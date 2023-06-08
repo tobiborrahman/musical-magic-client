@@ -12,7 +12,7 @@ const MyClasses = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				setMyClasses(data);
 			});
 	}, []);

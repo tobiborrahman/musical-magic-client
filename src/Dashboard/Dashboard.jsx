@@ -3,8 +3,8 @@ import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
-	const isAdmin = false;
-	const isInstructor = true;
+	const isAdmin = true;
+	const isInstructor = false;
 	const isUser = false;
 	return (
 		<div className="drawer lg:drawer-open">

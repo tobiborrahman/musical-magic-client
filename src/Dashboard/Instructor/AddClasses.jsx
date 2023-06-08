@@ -11,7 +11,7 @@ const AddClasses = () => {
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
+		// console.log(data);
 		fetch('http://localhost:5000/addedClasses', {
 			method: 'POST',
 			headers: {
