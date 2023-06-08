@@ -14,7 +14,7 @@ const useRoles = () => {
 			const res = await axiosSecure.get(`/users/role/${user?.email}`);
 			console.log(res.data.roles);
 			const userRoles = res.data.roles;
-			return userRoles?.includes('admin');
+			return userRoles.includes('admin');
 		},
 	});
 
@@ -25,7 +25,7 @@ const useRoles = () => {
 			const res = await axiosSecure.get(`/users/role/${user?.email}`);
 			console.log(res.data);
 			const userRoles = res.data.roles;
-			return userRoles?.includes('instructor');
+			return userRoles.includes('admin');
 		},
 	});
 

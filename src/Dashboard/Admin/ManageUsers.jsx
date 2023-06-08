@@ -1,52 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-
-// const ManageUsers = () => {
-// 	const [users, setUsers] = useState([]);
-
-// 	useEffect(() => {
-// 		fetch('http://localhost:5000/users', {
-// 			method: 'GET',
-// 			headers: {
-// 				'content-type': 'application/json',
-// 			},
-// 		})
-// 			.then((res) => res.json())
-// 			.then((data) => {
-// 				setUsers(data);
-// 			});
-// 	}, []);
-
-// 	return (
-// 		<div className="w-3/4">
-// 			<div className="flex justify-around items-center bg-gray-200 py-2 mb-3">
-// 				<h3 className="font-bold">User Name</h3>
-// 				<h3 className="font-bold">User Email</h3>
-// 				<h3 className="font-bold">Make Admin Button</h3>
-// 				<h3 className="font-bold">Make Instructor Button</h3>
-// 			</div>
-// 			{users.map((user) => (
-// 				<>
-// 					<div className="flex justify-around items-center">
-// 						<p>{user.name}</p>
-// 						<p>{user.email}</p>
-// 						<button className="btn btn-ghost btn-xs  hover:text-white  duration-700 text-[#0C4B65] bg-[#EFCF4F] hover:bg-[#0C4B65] mt-3 ">
-// 							Make Admin
-// 						</button>
-// 						<button className="btn btn-ghost btn-xs  text-white  duration-700  hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 ">
-// 							Make Instructor
-// 						</button>
-// 					</div>
-// 					<div className="divider"></div>
-// 				</>
-// 			))}
-// 		</div>
-// 	);
-// };
-
-// export default ManageUsers;
-
 import { useQuery } from '@tanstack/react-query';
-import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 
@@ -78,10 +30,6 @@ const ManageUsers = () => {
 					});
 				}
 			});
-	};
-
-	const handleDelete = (user) => {
-		console.log(user);
 	};
 
 	return (
@@ -132,21 +80,11 @@ const ManageUsers = () => {
 														'admin'
 													)
 												}
-												className="btn bg-orange-300 btn-md text-2xl"
+												className=" text-white py-2 px-2 duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]  rounded-md mr-5"
 											>
 												Admin
 											</button>
-											<button
-												onClick={() =>
-													handleRoleChange(
-														user,
-														'user'
-													)
-												}
-												className="btn bg-blue-300 btn-md text-2xl"
-											>
-												User
-											</button>
+
 											<button
 												onClick={() =>
 													handleRoleChange(
@@ -154,20 +92,12 @@ const ManageUsers = () => {
 														'instructor'
 													)
 												}
-												className="btn bg-green-300 btn-md text-2xl"
+												className=" text-white py-2 px-2 duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] rounded-md"
 											>
 												Instructor
 											</button>
 										</>
 									)}
-								</td>
-								<td>
-									<button
-										onClick={() => handleDelete(user)}
-										className="btn bg-red-500 btn-md text-2xl"
-									>
-										<FaTrashAlt></FaTrashAlt>
-									</button>
 								</td>
 							</tr>
 						))}

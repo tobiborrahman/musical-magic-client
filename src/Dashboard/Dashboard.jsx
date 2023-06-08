@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
-import useRoles from '../hooks/useRoles';
+// import useRoles from '../hooks/useRoles';
 
 const Dashboard = () => {
-	// const isAdmin = true;
-	// const isInstructor = false;
-	// const isUser = false;
-	const [isAdmin, isInstructor, isUser] = useRoles();
+	const isAdmin = true;
+	const isInstructor = false;
+	const isUser = false;
+	// const [isAdmin, isInstructor, isUser] = useRoles();
 	// if (isAdminLoading || isInstructorLoading || isUserLoading) {
 	// 	return <span className="loading loading-ring loading-lg"></span>;
 	// }
