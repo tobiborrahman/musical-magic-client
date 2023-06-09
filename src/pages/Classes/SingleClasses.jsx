@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleClasses = ({ classes }) => {
-	console.log('single classes', classes);
+	// console.log('single classes', classes);
 	const { _id, className, instructorName, photoUrl, price, seats } = classes;
 
 	const handleAddToCart = () => {

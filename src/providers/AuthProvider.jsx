@@ -11,7 +11,6 @@ import {
 } from 'firebase/auth';
 import app from '../firebase.config';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
 
 export const AuthContext = createContext(null);
 
@@ -39,6 +38,7 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const logOut = () => {
+		setLoading(true);
 		return signOut(auth);
 	};
 
@@ -59,13 +59,12 @@ const AuthProvider = ({ children }) => {
 						email: currentUser.email,
 					})
 					.then((data) => {
-						// console.log(data);
+						// console.log(data.data.token);
 						localStorage.setItem('access-token', data.data.token);
 						setLoading(false);
 					});
 			} else {
 				localStorage.removeItem('access-token');
-				setLoading(false);
 			}
 		});
 

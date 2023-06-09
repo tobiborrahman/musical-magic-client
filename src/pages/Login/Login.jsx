@@ -22,7 +22,7 @@ const Login = () => {
 	const onSubmit = (data) => {
 		signIn(data.email, data.password)
 			.then((res) => {
-				console.log(res.user);
+				console.log(res.user.email);
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {

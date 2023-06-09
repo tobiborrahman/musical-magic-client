@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import SingleSelectedClasses from './SingleSelectedClasses';
+import { Link } from 'react-router-dom';
+import useCarts from '../../hooks/useCarts';
 
 const SelectedClasses = () => {
 	const [selectedClasses, setSelectedClasses] = useState([]);
-	useEffect(() => {
-		fetch('http://localhost:5000/class')
-			.then((res) => res.json())
-			.then((data) => {
-				// console.log(data);
-				setSelectedClasses(data);
-			});
-	}, []);
+	const [, cart] = useCarts();
+	console.log(cart);
+
+	// useEffect(() => {
+	// 	fetch('http://localhost:5000/class')
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			console.log(data);
+	// 			setSelectedClasses(data);
+	// 		});
+	// }, []);
 
 	return (
 		<div className="w-full rounded-md mx-5">
@@ -18,7 +23,9 @@ const SelectedClasses = () => {
 				<h2 className="text-3xl text-center my-10">
 					My selected classes: {selectedClasses.length}{' '}
 				</h2>
-				<button className="btn btn-md bg-yellow-300">Pay</button>
+				<Link to="/dashboard/payment">
+					<button className="btn btn-md bg-yellow-300">Pay</button>
+				</Link>
 			</div>
 			<div>
 				<div className="flex justify-between items-center px-10 bg-gray-200 py-3">
@@ -29,7 +36,7 @@ const SelectedClasses = () => {
 				</div>
 			</div>
 
-			{selectedClasses.map((classes) => (
+			{cart.map((classes) => (
 				<SingleSelectedClasses
 					key={classes._id}
 					classes={classes}

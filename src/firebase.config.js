@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: 'AIzaSyCw9r6b_bBEYJtrFvINHdLN9Zi9I9oH66A',
-	authDomain: 'final-photography-client.firebaseapp.com',
-	projectId: 'final-photography-client',
-	storageBucket: 'final-photography-client.appspot.com',
-	messagingSenderId: '559250836451',
-	appId: '1:559250836451:web:90ea0d9575147dc48d2ed6',
+	apiKey: import.meta.env.VITE_apiKey,
+	authDomain: import.meta.env.VITE_authDomain,
+	projectId: import.meta.env.VITE_projectId,
+	storageBucket: import.meta.env.VITE_storageBucket,
+	messagingSenderId: import.meta.env.VITE_messagingSenderId,
+	appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

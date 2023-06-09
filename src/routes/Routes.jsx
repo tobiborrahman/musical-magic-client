@@ -13,6 +13,7 @@ import ManageClasses from '../Dashboard/Admin/ManageClasses';
 import ManageUsers from '../Dashboard/Admin/ManageUsers';
 import AddClasses from '../Dashboard/Instructor/AddClasses';
 import MyClasses from '../Dashboard/Instructor/MyClasses';
+import Payments from '../Payments/Payments';
 
 const router = createBrowserRouter([
 	{
@@ -73,6 +74,12 @@ const router = createBrowserRouter([
 			{
 				path: 'myClasses',
 				element: <MyClasses></MyClasses>,
+			},
+
+			//  Payments
+			{
+				path: 'payment',
+				element: <Payments></Payments>,
 			},
 		],
 	},
