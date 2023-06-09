@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaGoogle, FaGooglePlus } from 'react-icons/fa';
 
 const SocialLogin = () => {
 	const { googlePopUp } = useAuth();
@@ -21,12 +22,12 @@ const SocialLogin = () => {
 	};
 
 	return (
-		<div>
+		<div className="text-center">
 			<button
 				onClick={handleGooglePopUp}
-				className="btn btn-circle btn-outline"
+				className="btn btn-outline text-white border-none duration-700 w-full text-3xl rounded-none hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]"
 			>
-				G
+				<FaGoogle></FaGoogle>
 			</button>
 		</div>
 	);

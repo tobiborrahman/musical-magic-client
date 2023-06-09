@@ -125,12 +125,14 @@ const SignUp = () => {
 					</Link>
 
 					<input
-						className="py-2 px-5 text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 "
+						className="py-2 w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 "
 						type="submit"
 						value="Sign Up"
 					/>
 				</form>
-				<SocialLogin></SocialLogin>
+				<div className="text-center mt-3">
+					<SocialLogin></SocialLogin>
+				</div>
 			</div>
 		</div>
 	);
