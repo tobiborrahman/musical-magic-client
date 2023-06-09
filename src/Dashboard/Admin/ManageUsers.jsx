@@ -19,7 +19,7 @@ const ManageUsers = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				if (data.modifiedCount) {
 					Swal.fire({
 						position: 'top-end',
@@ -57,8 +57,6 @@ const ManageUsers = () => {
 								<td>
 									{user.role === 'admin'
 										? 'Admin'
-										: user.role === 'user'
-										? 'User'
 										: user.role === 'instructor'
 										? 'Instructor'
 										: ''}
@@ -67,7 +65,7 @@ const ManageUsers = () => {
 									{user.role === 'admin' ? (
 										<button
 											disabled
-											className="btn bg-gray-400 btn-md text-2xl"
+											className="py-2 px-2  rounded-md bg-gray-400"
 										>
 											Admin
 										</button>
@@ -83,6 +81,13 @@ const ManageUsers = () => {
 												className=" text-white py-2 px-2 duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]  rounded-md mr-5"
 											>
 												Admin
+											</button>
+
+											<button
+												disabled
+												className="py-2 px-2  rounded-md bg-gray-400"
+											>
+												instructor
 											</button>
 
 											<button

@@ -1,16 +1,19 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
-// import useRoles from '../hooks/useRoles';
 
 const Dashboard = () => {
-	const isAdmin = true;
+	const isAdmin = false;
 	const isInstructor = false;
-	const isUser = false;
+	const isUser = true;
+
+	// const [isAdmin, isAdminLoading] = useAdmin();
+
 	// const [isAdmin, isInstructor, isUser] = useRoles();
 	// if (isAdminLoading || isInstructorLoading || isUserLoading) {
 	// 	return <span className="loading loading-ring loading-lg"></span>;
 	// }
+
 	return (
 		<div className="drawer lg:drawer-open">
 			<input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

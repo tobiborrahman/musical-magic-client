@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Classes = () => {
+	// const { user } = useAuth();
+	// const navigate = useNavigate();
 	const [popularClasses, setPopularClasses] = useState([]);
 
 	useEffect(() => {
@@ -17,6 +22,22 @@ const Classes = () => {
 				setPopularClasses(data);
 			});
 	}, []);
+
+	const handleAddToCart = (items) => {
+		console.log(items);
+
+		fetch(`http://localhost:5000/class/${items._id}`, {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(items),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
+	};
 
 	return (
 		<div>
@@ -56,7 +77,10 @@ const Classes = () => {
 											From {classes.price}$
 										</h3>
 									</div>
-									<button className="py-2 px-5 text-white text-md duration-500  hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]">
+									<button
+										onClick={() => handleAddToCart(classes)}
+										className="py-2 px-5 text-white text-md duration-500  hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]"
+									>
 										Select
 									</button>
 								</div>

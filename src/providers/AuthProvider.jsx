@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth';
 import app from '../firebase.config';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 export const AuthContext = createContext(null);
 
