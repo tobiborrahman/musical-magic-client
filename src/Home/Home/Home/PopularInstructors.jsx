@@ -8,7 +8,7 @@ const PopularInstructors = () => {
 		fetch('PopularInstructors.json')
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				setInstructors(data);
 			});
 	}, []);

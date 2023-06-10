@@ -7,6 +7,20 @@ import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe(import.meta.env.VITE_payment_getway_pk);
 
 const Payments = () => {
+	const [selectedClasses, setSelectedClasses] = useState([]);
+
+	const total = selectedClasses?.reduce((sum, item) => item.price + sum, 0);
+	const price = parseFloat(total.toFixed(2));
+
+	useEffect(() => {
+		fetch('http://localhost:5000/class')
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setSelectedClasses(data);
+			});
+	}, []);
+
 	return (
 		<div className="w-3/4">
 			<div>
@@ -16,7 +30,7 @@ const Payments = () => {
 				></SectionTitle>
 
 				<Elements stripe={stripePromise}>
-					<Checkout></Checkout>
+					<Checkout price={price}></Checkout>
 				</Elements>
 			</div>
 		</div>

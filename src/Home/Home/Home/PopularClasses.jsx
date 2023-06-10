@@ -44,7 +44,7 @@ const PopularClasses = () => {
 											Students: {classes.totalStudents}
 										</h3>
 										<h3 className="card-title">
-											from {classes.price}$
+											from {parseFloat(classes.price)}$
 										</h3>
 									</div>
 									<button className="py-2 px-5 text-white text-md duration-500  hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]">
