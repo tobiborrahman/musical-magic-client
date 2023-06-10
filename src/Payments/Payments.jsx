@@ -11,7 +11,7 @@ const Payments = () => {
 
 	const total = selectedClasses?.reduce((sum, item) => item.price + sum, 0);
 	const price = Math.round(total.toFixed(2));
-	console.log('from payment', price);
+	// console.log('from payment', price);
 
 	useEffect(() => {
 		fetch('http://localhost:5000/class')
@@ -33,7 +33,10 @@ const Payments = () => {
 				</div> */}
 
 				<Elements stripe={stripePromise}>
-					<Checkout price={price}></Checkout>
+					<Checkout
+						price={price}
+						selectedClasses={selectedClasses}
+					></Checkout>
 				</Elements>
 			</div>
 		</div>

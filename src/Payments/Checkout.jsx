@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import useAuth from '../hooks/useAuth';
 
-const Checkout = ({ price }) => {
+const Checkout = ({ price, selectedClasses }) => {
 	const stripe = useStripe();
 	const elements = useElements();
 	const { user } = useAuth();
@@ -11,14 +11,14 @@ const Checkout = ({ price }) => {
 	const [cardError, setCardError] = useState();
 	const [clientSecret, setClientSecret] = useState('');
 	const [processing, setProcessing] = useState(false);
+	const [transactionId, setTransactionId] = useState('');
 
 	useEffect(() => {
-		console.log('from checkout', price);
 		if (price > 0) {
 			axiosSecure
 				.post('/payment-intent-method', { price })
 				.then((res) => {
-					console.log(res.data.clientSecret);
+					// console.log(res.data.clientSecret);
 					setClientSecret(res.data.clientSecret);
 				});
 		}
@@ -69,8 +69,33 @@ const Checkout = ({ price }) => {
 		}
 		console.log(paymentIntent);
 
+		setProcessing(false);
+
 		if (paymentIntent.status === 'succeeded') {
-			const transactionId = paymentIntent.id;
+			setTransactionId(paymentIntent.id);
+			// const transactionId = paymentIntent.id;
+			const payment = {
+				email: user?.email,
+				transactionId: paymentIntent.id,
+				price,
+				// quantity: selectedClasses.length,
+				// items: selectedClasses.map((item) => item.id),
+				// itemNames: selectedClasses.map((item) => item.className),
+			};
+			axiosSecure.post('/payments', payment).then((res) => {
+				console.log(res.data);
+			});
+			// fetch('http://localhost:5000/payments', {
+			// 	method: 'POST',
+			// 	headers: {
+			// 		'content-type': 'application/json',
+			// 	},
+			// 	body: JSON.stringify(payment),
+			// })
+			// 	.then((res) => res.json())
+			// 	.then((data) => {
+			// 		console.log(data);
+			// 	});
 		}
 	};
 
@@ -97,12 +122,17 @@ const Checkout = ({ price }) => {
 				<button
 					className="btn btn-primary mt-4 btn-sm"
 					type="submit"
-					disabled={!stripe || !clientSecret}
+					disabled={!stripe || !clientSecret || processing}
 				>
 					Pay
 				</button>
 			</form>
 			{cardError && <p className="text-red-700">{cardError}</p>}
+			{transactionId && (
+				<p className="text-green-700 mt-2">
+					Payment completed with transactionId: {transactionId}
+				</p>
+			)}
 		</div>
 	);
 };
