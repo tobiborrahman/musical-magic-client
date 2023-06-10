@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { useInsertionEffect } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
-	const isAdmin = false;
-	const isInstructor = false;
-	const isUser = true;
+	const isAdmin = true;
+	// const [isAdmin] = useAdmin();
 
-	// const [isAdmin, isAdminLoading] = useAdmin();
-
-	// const [isAdmin, isInstructor, isUser] = useRoles();
-	// if (isAdminLoading || isInstructorLoading || isUserLoading) {
-	// 	return <span className="loading loading-ring loading-lg"></span>;
-	// }
+	// const [isInstructor] = useInstructor();
 
 	return (
 		<div className="drawer lg:drawer-open">
@@ -67,7 +63,7 @@ const Dashboard = () => {
 								</Link>
 							</li>
 						</>
-					) : isUser ? (
+					) : (
 						<>
 							<li>
 								<Link to="/dashboard/userHome">
@@ -90,8 +86,6 @@ const Dashboard = () => {
 								</Link>
 							</li>
 						</>
-					) : (
-						''
 					)}
 
 					<div className="divider"></div>

@@ -1,9 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useInsertionEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
+	const isAdmin = true;
+	// const [isAdmin] = useAdmin();
+	// const [isInstructor] = useInstructor();
 
 	const handleLogOut = () => {
 		logOut()
@@ -50,7 +55,13 @@ const Navbar = () => {
 					{user && (
 						<Link
 							className="mr-5 hover:text-[#C25934] font-bold duration-500"
-							to="/dashboard"
+							to={
+								isAdmin
+									? '/dashboard/adminHome'
+									: isInstructor
+									? '/dashboard/instructorHome'
+									: '/dashboard/userHome'
+							}
 						>
 							Dashboard
 						</Link>

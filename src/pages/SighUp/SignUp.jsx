@@ -12,6 +12,7 @@ const SignUp = () => {
 		handleSubmit,
 		formState: { errors },
 		watch,
+		reset,
 	} = useForm();
 	const onSubmit = (data) => {
 		// console.log(data, data.email, data.password);
@@ -33,6 +34,7 @@ const SignUp = () => {
 					.catch((err) => {
 						console.log(err);
 					});
+				reset();
 			})
 			.catch((err) => {
 				console.log(err);

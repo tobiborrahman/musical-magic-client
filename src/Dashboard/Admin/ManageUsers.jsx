@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { FaUserShield, FaUsers } from 'react-icons/fa';
 
 const ManageUsers = () => {
 	const [axiosSecure] = useAxiosSecure();
@@ -9,13 +10,9 @@ const ManageUsers = () => {
 		return res.data;
 	});
 
-	const handleRoleChange = (user, newRole) => {
-		fetch(`http://localhost:5000/users/role/${user._id}`, {
+	const handleMakeAdmin = (user) => {
+		fetch(`http://localhost:5000/users/admin/${user._id}`, {
 			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ role: newRole }),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -29,6 +26,36 @@ const ManageUsers = () => {
 						timer: 1500,
 					});
 				}
+			});
+	};
+	const handleMakeInstructor = (user) => {
+		fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+			method: 'PATCH',
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				// console.log(data);
+				if (data.modifiedCount) {
+					Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: `${user.name} role has been changed!`,
+						showConfirmButton: false,
+						timer: 1500,
+					});
+				}
+			});
+
+		fetch('http://localhost:5000/instructors', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(user),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
 			});
 	};
 
@@ -55,53 +82,31 @@ const ManageUsers = () => {
 								<td>{user.name}</td>
 								<td>{user.email}</td>
 								<td>
-									{user.role === 'admin'
-										? 'Admin'
-										: user.role === 'instructor'
-										? 'Instructor'
-										: ''}
+									{user.role === 'admin' ? (
+										'Admin'
+									) : (
+										<button
+											onClick={() =>
+												handleMakeAdmin(user)
+											}
+											className="btn bg-orange-300 btn-md text-2xl"
+										>
+											<FaUserShield></FaUserShield>
+										</button>
+									)}
 								</td>
 								<td>
-									{user.role === 'admin' ? (
-										<button
-											disabled
-											className="py-2 px-2  rounded-md bg-gray-400"
-										>
-											Admin
-										</button>
+									{user.role === 'instructor' ? (
+										'Instructor'
 									) : (
-										<>
-											<button
-												onClick={() =>
-													handleRoleChange(
-														user,
-														'admin'
-													)
-												}
-												className=" text-white py-2 px-2 duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]  rounded-md mr-5"
-											>
-												Admin
-											</button>
-
-											<button
-												disabled
-												className="py-2 px-2  rounded-md bg-gray-400"
-											>
-												instructor
-											</button>
-
-											<button
-												onClick={() =>
-													handleRoleChange(
-														user,
-														'instructor'
-													)
-												}
-												className=" text-white py-2 px-2 duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] rounded-md"
-											>
-												Instructor
-											</button>
-										</>
+										<button
+											onClick={() =>
+												handleMakeInstructor(user)
+											}
+											className="btn bg-orange-300 btn-md text-2xl"
+										>
+											<FaUsers></FaUsers>
+										</button>
 									)}
 								</td>
 							</tr>
