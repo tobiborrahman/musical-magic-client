@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleSelectedClasses from './SingleSelectedClasses';
 import { Link } from 'react-router-dom';
-import useCarts from '../../hooks/useCarts';
 
 const SelectedClasses = () => {
 	const [selectedClasses, setSelectedClasses] = useState([]);

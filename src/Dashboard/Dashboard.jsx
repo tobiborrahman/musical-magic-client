@@ -1,15 +1,15 @@
 import React, { useInsertionEffect } from 'react';
-import { FaHome } from 'react-icons/fa';
+import { FaBook, FaBookOpen, FaHome, FaUsers } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
-	const isAdmin = true;
-	const isInstructor = false;
+	// const isAdmin = true;
+	// const isInstructor = false;
 
-	// const [isAdmin] = useAdmin();
-	// const [isInstructor] = useInstructor();
+	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
 
 	return (
 		<div className="drawer lg:drawer-open">
@@ -24,9 +24,9 @@ const Dashboard = () => {
 				</label>
 				<Outlet></Outlet>
 			</div>
-			<div className="drawer-side">
+			<div className="drawer-side bg-[#0C4B65]">
 				<label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-				<ul className="menu p-4 w-64 h-full bg-base-200 text-base-content">
+				<ul className="menu p-4 w-64 h-full bg-[#0C4B65] text-white">
 					{/* Sidebar content here */}
 					{isAdmin && (
 						<>
@@ -37,12 +37,12 @@ const Dashboard = () => {
 							</li>
 							<li>
 								<Link to="/dashboard/manageClasses">
-									<FaHome></FaHome> Manage Classes
+									<FaBookOpen></FaBookOpen> Manage Classes
 								</Link>
 							</li>
 							<li>
 								<Link to="/dashboard/manageUsers">
-									<FaHome></FaHome> Manage Users
+									<FaUsers></FaUsers> Manage Users
 								</Link>
 							</li>
 						</>
@@ -102,7 +102,7 @@ const Dashboard = () => {
 					</li>
 					<li>
 						<Link to="/classes">
-							<FaHome></FaHome> Available Classes
+							<FaBook></FaBook> Available Classes
 						</Link>
 					</li>
 				</ul>

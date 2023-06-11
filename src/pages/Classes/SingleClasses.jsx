@@ -1,9 +1,12 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const SingleClasses = ({ classes }) => {
 	// console.log('single classes', classes);
+	const { user } = useAuth();
 	const { _id, className, instructorName, photoUrl, price, seats } = classes;
 
+	const email = user?.email;
 	const handleAddToCart = () => {
 		// console.log(items);
 		const classItems = {
@@ -12,6 +15,7 @@ const SingleClasses = ({ classes }) => {
 			photoUrl,
 			price,
 			seats,
+			email,
 		};
 
 		fetch(`http://localhost:5000/class`, {

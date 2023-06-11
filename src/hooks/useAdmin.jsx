@@ -9,11 +9,13 @@ const useAdmin = () => {
 
 	const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
 		queryKey: ['isAdmin', user?.email],
-		enabled: !loading,
+		enabled:
+			!loading && !!user?.email && !!localStorage.getItem('access-token'),
+
 		queryFn: async () => {
 			const res = await axiosSecure.get(`/users/admin/${user?.email}`);
-			console.log('from use admin', res.data);
-			
+			// console.log('from use admin', res.data);
+
 			return res.data.admin;
 		},
 	});
@@ -22,7 +24,6 @@ const useAdmin = () => {
 };
 
 export default useAdmin;
-
 
 // const useAdmin = () => {
 //     const {user} = useContext(AuthContext);

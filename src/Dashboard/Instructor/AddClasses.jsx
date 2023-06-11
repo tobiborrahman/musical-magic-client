@@ -1,24 +1,46 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const AddClasses = () => {
 	const { user } = useAuth();
+	const [axiosSecure] = useAxiosSecure();
 
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm();
 	const onSubmit = (data) => {
 		// console.log(data);
+		// axiosSecure.post('/addedClasses', { data }).then((res) => {
+		// 	console.log(res.data);
+		// 	if (res.data.insertedId) {
+		// 		reset(),
+		// 			Swal.fire({
+		// 				position: 'center',
+		// 				icon: 'success',
+		// 				title: 'Data send to the admin',
+		// 				showConfirmButton: false,
+		// 				timer: 1500,
+		// 			});
+		// 	}
+		// });
+
 		fetch('http://localhost:5000/addedClasses', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',
 			},
 			body: JSON.stringify(data),
-		});
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
 	};
 	// console.log(errors);
 

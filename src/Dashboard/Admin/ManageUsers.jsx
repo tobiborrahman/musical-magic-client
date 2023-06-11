@@ -5,7 +5,6 @@ import { FaUserShield, FaUsers } from 'react-icons/fa';
 import useAuth from '../../hooks/useAuth';
 
 const ManageUsers = () => {
-	
 	const [axiosSecure] = useAxiosSecure();
 	const { data: users = [] } = useQuery(['users'], async () => {
 		const res = await axiosSecure.get('/users');
@@ -63,7 +62,7 @@ const ManageUsers = () => {
 	};
 
 	return (
-		<div>
+		<div className="w-full">
 			<h1 className="text-2xl text-center my-5">
 				Total Users: {users.length}
 			</h1>
@@ -92,7 +91,7 @@ const ManageUsers = () => {
 											onClick={() =>
 												handleMakeAdmin(user)
 											}
-											className="btn bg-orange-300 btn-md text-2xl"
+											className="btn text-white bg-[#0C4B65] btn-md text-2xl"
 										>
 											<FaUserShield></FaUserShield>
 										</button>
@@ -106,7 +105,7 @@ const ManageUsers = () => {
 											onClick={() =>
 												handleMakeInstructor(user)
 											}
-											className="btn bg-orange-300 btn-md text-2xl"
+											className="btn bg-[#0C4B65] text-white btn-md text-2xl"
 										>
 											<FaUsers></FaUsers>
 										</button>

@@ -1,50 +1,55 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
 import SectionTitle from '../../../components/SectionTitle';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-const PopularInstructors = () => {
+const Instructors = () => {
+	const { user } = useAuth();
 	const [instructors, setInstructors] = useState([]);
-
 	useEffect(() => {
 		fetch('PopularInstructors.json')
 			.then((res) => res.json())
 			.then((data) => {
-				// console.log(data);
+				// setInstructors(data);
+			});
+	}, []);
+
+	useEffect(() => {
+		fetch('http://localhost:5000/users/instructors')
+			.then((res) => res.json())
+			.then((data) => {
 				setInstructors(data);
 			});
 	}, []);
+
 	return (
 		<div>
 			<SectionTitle
-				heading="Meet Our Instructors"
-				subHeading="Our Team"
+				heading="Popular Instructors"
+				subHeading="Instructors"
 			></SectionTitle>
 
-			<div className="grid md:grid-cols-3 gap-5 mx-10 mb-20">
-				{instructors.map((classes) => (
+			<div className="flex  gap-5 mb-20">
+				{instructors.map((instructor) => (
 					<>
-						<div className="card w-96 glass" key={classes.price}>
-							<figure>
-								<img src={classes.image} alt="car!" />
-							</figure>
-							<div className="card-body">
-								<h2 className="card-title text-[#C25934] font-bold">
-									{classes.instructorName}{' '}
-								</h2>
-								<p className="text-[#0C4B65]">
-									{classes.description}
-								</p>
+						<div className="">
+							<img
+								className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
+								src={instructor.photo}
+								alt=""
+							/>
 
-								<div className="card-actions flex justify-between items-center">
-									<div>
-										<h3 className="card-title">
-											Students: {classes.totalStudents}
-										</h3>
-									</div>
-									<button className="py-2 px-5 text-white text-md duration-500  hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]">
-										View Details
-									</button>
-								</div>
-							</div>
+							<h3 className="text-2xl text-center font-bold text-[#C25934]">
+								{instructor.name}
+							</h3>
+							<p className="text-center font-bold text-[#0C4B65]">
+								{instructor.email}
+							</p>
+							<p className="flex justify-evenly items-center mt-2">
+								<FaFacebook></FaFacebook>
+								<FaInstagram></FaInstagram>
+								<FaTwitter></FaTwitter>
+							</p>
 						</div>
 					</>
 				))}
@@ -53,4 +58,4 @@ const PopularInstructors = () => {
 	);
 };
 
-export default PopularInstructors;
+export default Instructors;

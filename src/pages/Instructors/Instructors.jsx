@@ -24,7 +24,7 @@ const Instructors = () => {
 	return (
 		<div>
 			<SectionTitle
-				heading="All the instructors"
+				heading="All the Instructors"
 				subHeading="Instructors"
 			></SectionTitle>
 
@@ -34,7 +34,7 @@ const Instructors = () => {
 						<div className="">
 							<img
 								className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
-								src={user?.photoURL}
+								src={instructor.photo}
 								alt=""
 							/>
 
