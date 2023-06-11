@@ -6,8 +6,9 @@ import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
 	const isAdmin = true;
-	// const [isAdmin] = useAdmin();
+	const isInstructor = false;
 
+	// const [isAdmin] = useAdmin();
 	// const [isInstructor] = useInstructor();
 
 	return (
@@ -27,7 +28,7 @@ const Dashboard = () => {
 				<label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 				<ul className="menu p-4 w-64 h-full bg-base-200 text-base-content">
 					{/* Sidebar content here */}
-					{isAdmin ? (
+					{isAdmin && (
 						<>
 							<li>
 								<Link to="/dashboard/adminHome">
@@ -45,7 +46,9 @@ const Dashboard = () => {
 								</Link>
 							</li>
 						</>
-					) : isInstructor ? (
+					)}
+
+					{isInstructor && (
 						<>
 							<li>
 								<Link to="/dashboard/adminHome">
@@ -63,7 +66,9 @@ const Dashboard = () => {
 								</Link>
 							</li>
 						</>
-					) : (
+					)}
+
+					{!isAdmin && !isInstructor && (
 						<>
 							<li>
 								<Link to="/dashboard/userHome">

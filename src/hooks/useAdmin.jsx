@@ -12,7 +12,8 @@ const useAdmin = () => {
 		enabled: !loading,
 		queryFn: async () => {
 			const res = await axiosSecure.get(`/users/admin/${user?.email}`);
-			console.log('from use admin',res.data);
+			console.log('from use admin', res.data);
+			
 			return res.data.admin;
 		},
 	});
@@ -21,3 +22,23 @@ const useAdmin = () => {
 };
 
 export default useAdmin;
+
+
+// const useAdmin = () => {
+//     const {user} = useContext(AuthContext);
+//     const [axiosSecure] = useAxiosSecure();
+//     const {data: isAdmin, isLoading: isAdminLoading} = useQuery({
+//         queryKey: ['isAdmin', user?.email],
+//         queryFn: async () => {
+//             const res = await axiosSecure.get(`/users/
+// const {user} = useContext(AuthContext);
+//     const [axiosSecure] = useAxiosSecure();
+//     const {data: isAdmin, isLoading: isAdminLoading} = useQuery({
+//         queryKey: ['isAdmin', user?.email],
+//         queryFn: async () => {
+//             const res = await axiosSecure.get(`/users/admin/${user?.email}`);
+//             console.log('is admin response', res)
+//             return res.data.admin;
+//         }
+//     })
+//     return [isAdmin, isAdminLoading]

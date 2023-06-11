@@ -2,11 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { FaUserShield, FaUsers } from 'react-icons/fa';
+import useAuth from '../../hooks/useAuth';
 
 const ManageUsers = () => {
+	
 	const [axiosSecure] = useAxiosSecure();
 	const { data: users = [] } = useQuery(['users'], async () => {
 		const res = await axiosSecure.get('/users');
+		console.log('from manage users', res.data);
 		return res.data;
 	});
 

@@ -18,6 +18,7 @@ import AdminHome from '../Dashboard/Admin/AdminHome';
 import InstructorHome from '../Dashboard/Instructor/InstructorHome';
 import UserHome from '../Dashboard/User/UserHome';
 import AdminRoute from './AdminRoute';
+import PaymentHistory from '../Dashboard/User/PaymentHistory';
 
 const router = createBrowserRouter([
 	{
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
 			{
 				path: 'userHome',
 				element: <UserHome></UserHome>,
+			},
+			{
+				path: 'paymentHistory',
+				element: <PaymentHistory></PaymentHistory>,
 			},
 
 			//  Payments

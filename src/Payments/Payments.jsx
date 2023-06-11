@@ -9,7 +9,10 @@ const stripePromise = loadStripe(import.meta.env.VITE_payment_getway_pk);
 const Payments = () => {
 	const [selectedClasses, setSelectedClasses] = useState([]);
 
-	const total = selectedClasses?.reduce((sum, item) => item.price + sum, 0);
+	const total = selectedClasses?.reduce(
+		(sum, item) => parseFloat(item.price) + sum,
+		0
+	);
 	const price = Math.round(total.toFixed(2));
 	// console.log('from payment', price);
 

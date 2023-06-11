@@ -6,13 +6,16 @@ import useCarts from '../../hooks/useCarts';
 const SelectedClasses = () => {
 	const [selectedClasses, setSelectedClasses] = useState([]);
 
-	const total = selectedClasses?.reduce((sum, item) => item.price + sum, 0);
+	const total = selectedClasses?.reduce(
+		(sum, item) => parseFloat(item.price) + sum,
+		0
+	);
 
 	useEffect(() => {
 		fetch('http://localhost:5000/class')
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				setSelectedClasses(data);
 			});
 	}, []);

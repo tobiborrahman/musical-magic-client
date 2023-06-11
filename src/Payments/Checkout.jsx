@@ -78,24 +78,11 @@ const Checkout = ({ price, selectedClasses }) => {
 				email: user?.email,
 				transactionId: paymentIntent.id,
 				price,
-				// quantity: selectedClasses.length,
-				// items: selectedClasses.map((item) => item.id),
-				// itemNames: selectedClasses.map((item) => item.className),
+				name: user?.displayName,
 			};
 			axiosSecure.post('/payments', payment).then((res) => {
 				console.log(res.data);
 			});
-			// fetch('http://localhost:5000/payments', {
-			// 	method: 'POST',
-			// 	headers: {
-			// 		'content-type': 'application/json',
-			// 	},
-			// 	body: JSON.stringify(payment),
-			// })
-			// 	.then((res) => res.json())
-			// 	.then((data) => {
-			// 		console.log(data);
-			// 	});
 		}
 	};
 
