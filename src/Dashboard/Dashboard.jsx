@@ -1,5 +1,11 @@
 import React, { useInsertionEffect } from 'react';
-import { FaBook, FaBookOpen, FaHome, FaUsers } from 'react-icons/fa';
+import {
+	FaBook,
+	FaBookOpen,
+	FaDollarSign,
+	FaHome,
+	FaUsers,
+} from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
@@ -77,17 +83,19 @@ const Dashboard = () => {
 							</li>
 							<li>
 								<Link to="/dashboard/classes">
-									<FaHome></FaHome> My Selected Classes
+									<FaBook></FaBook> My Selected Classes
 								</Link>
 							</li>
 							<li>
 								<Link to="/dashboard/enrolledClasses">
-									<FaHome></FaHome> My Enrolled Classes
+									<FaBookOpen></FaBookOpen> My Enrolled
+									Classes
 								</Link>
 							</li>
 							<li>
 								<Link to="/dashboard/paymentHistory">
-									<FaHome></FaHome> Payment History
+									<FaDollarSign></FaDollarSign> Payment
+									History
 								</Link>
 							</li>
 						</>

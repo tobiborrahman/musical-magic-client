@@ -1,7 +1,27 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const SingleSelectedClasses = ({ classes }) => {
-	const { _id, className, instructorName, photoUrl, price, seats } = classes;
+	const { _id, className, instructorName, price } = classes;
+
+	const handleDelete = (id) => {
+		fetch(`http://localhost:5000/class/${id}`, {
+			method: 'DELETE',
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.deletedCount > 0) {
+					Swal.fire({
+						position: 'center',
+						icon: 'success',
+						title: 'Class has deleted successfully',
+						showConfirmButton: false,
+						timer: 1500,
+					});
+				}
+			});
+	};
 
 	return (
 		<div>
@@ -16,7 +36,10 @@ const SingleSelectedClasses = ({ classes }) => {
 							<td>{instructorName}</td>
 							<td>${parseFloat(price)}</td>
 							<td>
-								<button className="btn btn-outline btn-sm">
+								<button
+									onClick={() => handleDelete(_id)}
+									className="btn btn-outline btn-sm"
+								>
 									Delete
 								</button>
 							</td>

@@ -5,7 +5,6 @@ import Login from '../pages/Login/Login';
 import SignUp from '../pages/SighUp/SignUp';
 import Instructors from '../pages/Instructors/Instructors';
 import PrivateRoute from '../providers/PrivateRoute';
-import Classes from '../pages/Classes/Classes';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Dashboard from '../Dashboard/Dashboard';
 import SelectedClasses from '../Dashboard/User/SelectedClasses';
@@ -19,6 +18,7 @@ import InstructorHome from '../Dashboard/Instructor/InstructorHome';
 import UserHome from '../Dashboard/User/UserHome';
 import AdminRoute from './AdminRoute';
 import PaymentHistory from '../Dashboard/User/PaymentHistory';
+import ApprovedClasses from '../pages/Classes/approvedClasses';
 
 const router = createBrowserRouter([
 	{
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 				path: '/classes',
 				element: (
 					<PrivateRoute>
-						<Classes></Classes>
+						<ApprovedClasses></ApprovedClasses>
 					</PrivateRoute>
 				),
 			},

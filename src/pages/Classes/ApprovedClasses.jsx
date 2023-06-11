@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle';
 import SingleClasses from './SingleClasses';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
-const Classes = () => {
-	const [instructorClasses, setInstructorClasses] = useState([]);
+const ApprovedClasses = () => {
+	const [allClasses, setAllClasses] = useState([]);
+	const [axiosSecure] = useAxiosSecure();
 
 	useEffect(() => {
-		fetch('http://localhost:5000/addedClasses', {
-			method: 'GET',
-			headers: {
-				'content-type': 'application/json',
-			},
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				// console.log('set popular classes', data);
-				setInstructorClasses(data);
-			});
+		axiosSecure.get('/approvedClasses').then((res) => {
+			setAllClasses(res.data);
+		});
 	}, []);
 
 	return (
@@ -27,10 +21,10 @@ const Classes = () => {
 			></SectionTitle>
 
 			<div className="grid md:grid-cols-3 gap-5 mx-10 mb-20">
-				{instructorClasses.map((classes) => (
+				{allClasses.map((classes) => (
 					<SingleClasses
 						key={classes._id}
-						classes={classes}
+						classes={classes.classes}
 					></SingleClasses>
 				))}
 			</div>
@@ -38,4 +32,4 @@ const Classes = () => {
 	);
 };
 
-export default Classes;
+export default ApprovedClasses;
