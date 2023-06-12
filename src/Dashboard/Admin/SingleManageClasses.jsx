@@ -3,18 +3,11 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
 const SingleManageClasses = ({ classes }) => {
-	const { status } = classes;
-	console.log(status);
-	const [toStatus, setToStatus] = useState(status);
-	const [isApproveButtonDisabled, setIsApproveButtonDisabled] =
-		useState(false);
-	const [isDenyButtonDisabled, setIsDenyButtonDisabled] = useState(false);
-
 	const [axiosSecure] = useAxiosSecure();
-
-	const handleApprove = () => {
-		setToStatus('approved');
-		setIsApproveButtonDisabled(true);
+	const handleApprove = (id) => {
+		axiosSecure.patch(`/addedClasses/approved/${id}`).then((res) => {
+			console.log(res.data);
+		});
 
 		axiosSecure.post('/approvedClasses', { classes }).then((res) => {
 			console.log(res.data);
@@ -30,9 +23,10 @@ const SingleManageClasses = ({ classes }) => {
 		});
 	};
 
-	const handleDeny = () => {
-		setToStatus('denied');
-		setIsDenyButtonDisabled(true);
+	const handleDeny = (id) => {
+		axiosSecure.patch(`/addedClasses/denied/${id}`).then((res) => {
+			console.log(res.data);
+		});
 	};
 
 	return (
@@ -57,36 +51,40 @@ const SingleManageClasses = ({ classes }) => {
 				<td>${classes.price}</td>
 				<td>{classes.status}</td>
 				<td>
-					<button
-						onClick={handleApprove}
-						disabled={toStatus !== 'Pending'}
-						// disabled={isApproveButtonDisabled}
-						style={{
-							backgroundColor:
-								toStatus !== 'Pending'
-									? // isApproveButtonDisabled
-									  'gray'
-									: ' text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md',
-						}}
-						className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md"
-					>
-						Approve
-					</button>
+					{classes.status === 'approved' ||
+					classes.status === 'denied' ? (
+						<button
+							className="py-2 px-2 duration-700 font-bold  bg-gray-200 rounded-md"
+							disabled
+						>
+							Approved
+						</button>
+					) : (
+						<button
+							onClick={() => handleApprove(classes._id)}
+							className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md"
+						>
+							Approve
+						</button>
+					)}
 				</td>
 				<td>
-					<button
-						onClick={handleDeny}
-						disabled={isDenyButtonDisabled}
-						style={{
-							backgroundColor:
-								toStatus !== 'Pending'
-									? 'gray'
-									: ' text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md',
-						}}
-						className=" text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md"
-					>
-						Deny
-					</button>
+					{classes.status === 'denied' ||
+					classes.status === 'approved' ? (
+						<button
+							className="py-2 px-2 duration-700 font-bold  bg-gray-200 rounded-md"
+							disabled
+						>
+							Denied
+						</button>
+					) : (
+						<button
+							onClick={() => handleDeny(classes._id)}
+							className=" text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md"
+						>
+							Deny
+						</button>
+					)}
 				</td>
 				<td>
 					<button className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md">

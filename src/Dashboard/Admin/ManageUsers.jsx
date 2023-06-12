@@ -8,7 +8,6 @@ const ManageUsers = () => {
 
 	const { data: users = [] } = useQuery(['users'], async () => {
 		const res = await axiosSecure.get('/users');
-		console.log('from manage users', res.data);
 		return res.data;
 	});
 
@@ -43,7 +42,6 @@ const ManageUsers = () => {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				// console.log(data);
 				if (data.modifiedCount) {
 					Swal.fire({
 						position: 'top-end',
