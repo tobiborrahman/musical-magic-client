@@ -14,6 +14,7 @@ const SingleClasses = ({ classes }) => {
 
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
+	console.log(isAdmin, isInstructor);
 
 	const handleUser = () => {
 		Swal.fire({
@@ -24,6 +25,16 @@ const SingleClasses = ({ classes }) => {
 			timer: 1500,
 		});
 		<Navigate to="/login"></Navigate>;
+	};
+
+	const handleOthers = () => {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: `You can not purchase the class`,
+			showConfirmButton: false,
+			timer: 1500,
+		});
 	};
 
 	const handleAddToCart = () => {
@@ -89,14 +100,26 @@ const SingleClasses = ({ classes }) => {
 							<h3 className="card-title">From {price}$</h3>
 						</div>
 
-						{user ? (
+						{isAdmin ||
+							(isInstructor && (
+								<button
+									onClick={handleOthers}
+									className="py-2 px-5 text-white text-md duration-500 hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]"
+								>
+									Select
+								</button>
+							))}
+
+						{user && !isAdmin && !isInstructor && (
 							<button
 								onClick={() => handleAddToCart()}
 								className="py-2 px-5 text-white text-md duration-500 hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]"
 							>
 								Select
 							</button>
-						) : (
+						)}
+
+						{!user && !isAdmin && !isInstructor && (
 							<button
 								onClick={handleUser}
 								className="py-2 px-5 text-white text-md duration-500 hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]"

@@ -16,7 +16,7 @@ const Instructors = () => {
 	}, []);
 
 	return (
-		<div className="px-20 bg-blue-50">
+		<div className="px-20">
 			<SectionTitle
 				heading="All the Instructors"
 				subHeading="Instructors"
