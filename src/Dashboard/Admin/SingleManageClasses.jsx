@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const SingleManageClasses = ({ classes }) => {
-	const [status, setStatus] = useState('pending');
+	const { status } = classes;
+	console.log(status);
+	const [toStatus, setToStatus] = useState(status);
 	const [isApproveButtonDisabled, setIsApproveButtonDisabled] =
 		useState(false);
 	const [isDenyButtonDisabled, setIsDenyButtonDisabled] = useState(false);
@@ -10,16 +13,25 @@ const SingleManageClasses = ({ classes }) => {
 	const [axiosSecure] = useAxiosSecure();
 
 	const handleApprove = () => {
-		setStatus('approved');
+		setToStatus('approved');
 		setIsApproveButtonDisabled(true);
 
 		axiosSecure.post('/approvedClasses', { classes }).then((res) => {
 			console.log(res.data);
+			if (res.data.insertedId) {
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: `Class added to the courses`,
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
 		});
 	};
 
 	const handleDeny = () => {
-		setStatus('denied');
+		setToStatus('denied');
 		setIsDenyButtonDisabled(true);
 	};
 
@@ -43,15 +55,17 @@ const SingleManageClasses = ({ classes }) => {
 				<td>{classes.email}</td>
 				<td>{classes.seats}</td>
 				<td>${classes.price}</td>
-				<td>{status}</td>
+				<td>{classes.status}</td>
 				<td>
 					<button
 						onClick={handleApprove}
-						disabled={status !== 'pending'}
+						disabled={toStatus !== 'Pending'}
+						// disabled={isApproveButtonDisabled}
 						style={{
 							backgroundColor:
-								status !== 'pending'
-									? 'gray'
+								toStatus !== 'Pending'
+									? // isApproveButtonDisabled
+									  'gray'
 									: ' text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md',
 						}}
 						className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md"
@@ -64,9 +78,10 @@ const SingleManageClasses = ({ classes }) => {
 						onClick={handleDeny}
 						disabled={isDenyButtonDisabled}
 						style={{
-							backgroundColor: isDenyButtonDisabled
-								? 'gray'
-								: ' text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md',
+							backgroundColor:
+								toStatus !== 'Pending'
+									? 'gray'
+									: ' text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md',
 						}}
 						className=" text-white py-2 px-2 duration-700 font-bold   bg-[#0C4B65] rounded-md"
 					>

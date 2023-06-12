@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom';
 
 const SingleClasses = ({ classes }) => {
 	const { user } = useAuth();
-	const { _id, className, instructorName, photoUrl, price, seats } = classes;
+	const { className, instructorName, photoUrl, price, seats } = classes;
 	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 	const email = user?.email;

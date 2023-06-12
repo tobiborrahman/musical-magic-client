@@ -60,9 +60,8 @@ const MyClasses = () => {
 									</td>
 									<td>{classes.seats}</td>
 									<td>{classes.price}</td>
-									<td>Pending{classes.status}</td>
-									<td>Price: {classes.price}</td>
-									<td>{classes.price}</td>
+									<td>{classes.status}</td>
+
 									<td>
 										<button className="btn btn-ghost btn-xs  hover:text-white  duration-700 text-[#0C4B65] bg-[#EFCF4F] hover:bg-[#0C4B65] mt-3 ">
 											Feedback
