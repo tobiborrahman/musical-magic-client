@@ -27,13 +27,16 @@ const SignUp = () => {
 							photo: data.photoUrl,
 							email: data.email,
 						};
-						fetch('http://localhost:5000/users', {
-							method: 'POST',
-							headers: {
-								'content-type': 'application/json',
-							},
-							body: JSON.stringify(user),
-						});
+						fetch(
+							'https://final-assignment-server-virid.vercel.app/users',
+							{
+								method: 'POST',
+								headers: {
+									'content-type': 'application/json',
+								},
+								body: JSON.stringify(user),
+							}
+						);
 					})
 					.catch((err) => {
 						console.log(err);

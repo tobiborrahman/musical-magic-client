@@ -4,7 +4,7 @@ const MyClasses = () => {
 	const [myClasses, setMyClasses] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/addedClasses', {
+		fetch('https://final-assignment-server-virid.vercel.app/addedClasses', {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',

@@ -30,7 +30,7 @@ const AddClasses = () => {
 		// 	}
 		// });
 
-		fetch('http://localhost:5000/addedClasses', {
+		fetch('https://final-assignment-server-virid.vercel.app/addedClasses', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',

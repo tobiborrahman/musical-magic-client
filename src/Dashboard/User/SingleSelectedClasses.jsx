@@ -5,7 +5,7 @@ const SingleSelectedClasses = ({ classes }) => {
 	const { _id, className, instructorName, price } = classes;
 
 	const handleDelete = (id) => {
-		fetch(`http://localhost:5000/class/${id}`, {
+		fetch(`https://final-assignment-server-virid.vercel.app/class/${id}`, {
 			method: 'DELETE',
 		})
 			.then((res) => res.json())
@@ -38,7 +38,7 @@ const SingleSelectedClasses = ({ classes }) => {
 							<td>
 								<button
 									onClick={() => handleDelete(_id)}
-									className="btn btn-outline btn-sm"
+									className="py-1 px-3 text-xl duration-700 rounded-md hover:text-[#0C4B65] hover:bg-[#EFCF4F] border border-[#EFCF4F]"
 								>
 									Delete
 								</button>

@@ -19,7 +19,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="md:flex justify-between items-center shadow-md py-3 bg-[#0C4B65]  px-20">
+		<div className="md:flex justify-center text-center md:justify-between items-center shadow-md py-3 bg-[#0C4B65]  px-20">
 			<div className="flex">
 				<img
 					className="w-10 h-16 mt-1"
@@ -68,7 +68,7 @@ const Navbar = () => {
 				</li>
 			</div>
 
-			<div className="md:flex justify-center items-center">
+			<div className="md:flex justify-center text-center items-center">
 				{user && <p className="mr-2">{user?.displayName}</p>}
 
 				{user ? (
@@ -90,7 +90,7 @@ const Navbar = () => {
 				<div>
 					{user ? (
 						<img
-							className="w-12 ml-2 rounded-full"
+							className="w-12 ml-14 mt-2 md:mt-0 md:ml-2 rounded-full"
 							src={user?.photoURL}
 						/>
 					) : (

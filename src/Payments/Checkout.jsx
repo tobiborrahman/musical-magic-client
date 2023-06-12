@@ -88,7 +88,7 @@ const Checkout = ({ price, selectedClasses }) => {
 
 	return (
 		<div className="w-full">
-			<form onSubmit={handleSubmit} className="mx-auto ">
+			<form onSubmit={handleSubmit} className="mx-auto">
 				<CardElement
 					className="border p-3 rounded"
 					options={{

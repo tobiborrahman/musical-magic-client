@@ -11,7 +11,7 @@ import SectionTitle from '../../../components/SectionTitle';
 
 const Swiper = () => {
 	return (
-		<div className="mb-20">
+		<div className="pb-20">
 			<SectionTitle
 				subHeading="Gallery"
 				heading="Popular Collection"

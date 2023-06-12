@@ -14,7 +14,9 @@ const Instructors = () => {
 	}, []);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/users/instructors')
+		fetch(
+			'https://final-assignment-server-virid.vercel.app/users/instructors'
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				setInstructors(data);

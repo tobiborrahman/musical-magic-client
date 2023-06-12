@@ -6,7 +6,7 @@ import Swiper from './Swiper/Swiper';
 
 const Home = () => {
 	return (
-		<div>
+		<div className="bg-blue-50">
 			<Banner></Banner>
 			<PopularClasses></PopularClasses>
 			<PopularInstructors></PopularInstructors>

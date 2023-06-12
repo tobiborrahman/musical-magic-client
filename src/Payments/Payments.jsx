@@ -17,7 +17,7 @@ const Payments = () => {
 	// console.log('from payment', price);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/class')
+		fetch('https://final-assignment-server-virid.vercel.app/class')
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -27,13 +27,13 @@ const Payments = () => {
 
 	return (
 		<div className="w-3/4">
-			<div className="mt-10">
-				{/* <div>
+			<div>
+				<div>
 					<SectionTitle
 						subHeading="Process"
 						heading="Payment"
 					></SectionTitle>
-				</div> */}
+				</div>
 
 				<Elements stripe={stripePromise}>
 					<Checkout

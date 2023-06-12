@@ -44,11 +44,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/classes',
-				element: (
-					<PrivateRoute>
-						<ApprovedClasses></ApprovedClasses>
-					</PrivateRoute>
-				),
+				element: <ApprovedClasses></ApprovedClasses>,
 			},
 		],
 	},

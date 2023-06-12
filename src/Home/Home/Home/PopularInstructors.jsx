@@ -15,7 +15,9 @@ const Instructors = () => {
 	}, []);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/users/instructors')
+		fetch(
+			'https://final-assignment-server-virid.vercel.app/users/instructors'
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				setInstructors(data);
@@ -29,12 +31,12 @@ const Instructors = () => {
 				subHeading="Instructors"
 			></SectionTitle>
 
-			<div className="flex  gap-5 mb-20">
+			<div className="md:flex justify-center items-centers gap-5 mb-20">
 				{instructors.map((instructor) => (
 					<>
 						<div className="">
 							<img
-								className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
+								className="md:w-[200px] md:h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
 								src={instructor.photo}
 								alt=""
 							/>
