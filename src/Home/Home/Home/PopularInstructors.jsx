@@ -6,13 +6,6 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Instructors = () => {
 	const { user } = useAuth();
 	const [instructors, setInstructors] = useState([]);
-	useEffect(() => {
-		fetch('PopularInstructors.json')
-			.then((res) => res.json())
-			.then((data) => {
-				// setInstructors(data);
-			});
-	}, []);
 
 	useEffect(() => {
 		fetch(
@@ -24,6 +17,8 @@ const Instructors = () => {
 			});
 	}, []);
 
+	const homeInstructors = instructors.slice(0, 6);
+
 	return (
 		<div>
 			<SectionTitle
@@ -32,7 +27,7 @@ const Instructors = () => {
 			></SectionTitle>
 
 			<div className="md:flex justify-center items-centers gap-5 mb-20">
-				{instructors.map((instructor) => (
+				{homeInstructors.map((instructor) => (
 					<>
 						<div className="">
 							<img

@@ -67,7 +67,7 @@ const SingleClasses = ({ classes }) => {
 			<div className="card w-96 h-[500px] glass">
 				<figure>
 					<img
-						className="h-[250px] w-full"
+						className="h-[250px] w-full hover:scale-150 overflow-hidden duration-500"
 						src={photoUrl}
 						alt="car!"
 					/>
@@ -88,24 +88,6 @@ const SingleClasses = ({ classes }) => {
 						<div>
 							<h3 className="card-title">From {price}$</h3>
 						</div>
-						{/* <button
-							// disabled={user ? false : true}
-							// onClick={handleAddToCart}
-							onClick={
-								user
-									? handleAddToCart
-									: Swal.fire({
-											position: 'top-end',
-											icon: 'success',
-											title: `Please login to purchase`,
-											showConfirmButton: false,
-											timer: 1500,
-									  })
-							}
-							className="py-2 px-5 text-white text-md duration-500  hover:text-[#0C4B65] hover:bg-[#EFCF4F] hover:rounded-lg bg-[#0C4B65]"
-						>
-							Select
-						</button> */}
 
 						{user ? (
 							<button

@@ -6,7 +6,9 @@ const SingleManageClasses = ({ classes }) => {
 	const [isApproveButtonDisabled, setIsApproveButtonDisabled] =
 		useState(false);
 	const [isDenyButtonDisabled, setIsDenyButtonDisabled] = useState(false);
+
 	const [axiosSecure] = useAxiosSecure();
+
 	const handleApprove = () => {
 		setStatus('approved');
 		setIsApproveButtonDisabled(true);

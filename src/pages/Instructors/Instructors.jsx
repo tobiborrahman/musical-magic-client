@@ -3,15 +3,7 @@ import SectionTitle from '../../components/SectionTitle';
 import useAuth from '../../hooks/useAuth';
 
 const Instructors = () => {
-	const { user } = useAuth();
 	const [instructors, setInstructors] = useState([]);
-	useEffect(() => {
-		fetch('PopularInstructors.json')
-			.then((res) => res.json())
-			.then((data) => {
-				// setInstructors(data);
-			});
-	}, []);
 
 	useEffect(() => {
 		fetch(
@@ -24,21 +16,23 @@ const Instructors = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="px-20 bg-blue-50">
 			<SectionTitle
 				heading="All the Instructors"
 				subHeading="Instructors"
 			></SectionTitle>
 
-			<div className="flex  gap-5 mb-20">
+			<div className="gap-5 pb-20 grid grid-cols-4">
 				{instructors.map((instructor) => (
 					<>
-						<div className="">
-							<img
-								className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
-								src={instructor.photo}
-								alt=""
-							/>
+						<div>
+							<div className="flex justify-center items-center">
+								<img
+									className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
+									src={instructor.photo}
+									alt=""
+								/>
+							</div>
 
 							<h3 className="text-2xl text-center font-bold text-[#C25934]">
 								{instructor.name}

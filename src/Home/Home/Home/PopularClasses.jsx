@@ -12,6 +12,8 @@ const PopularClasses = () => {
 		});
 	}, []);
 
+	const homeClasses = popularClasses.slice(0, 6);
+
 	return (
 		<div>
 			<SectionTitle
@@ -20,11 +22,12 @@ const PopularClasses = () => {
 			></SectionTitle>
 
 			<div className="grid md:grid-cols-3 gap-5 mx-10 mb-20">
-				{popularClasses.map((classes) => (
+				{homeClasses.map((classes) => (
 					<>
 						<div className="card md:w-96 glass">
 							<figure>
 								<img
+									className="h-[250px] w-full hover:scale-150 overflow-hidden duration-500"
 									src={classes.classes.photoUrl}
 									alt="car!"
 								/>
