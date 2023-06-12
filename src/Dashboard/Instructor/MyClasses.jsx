@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const MyClasses = () => {
+	const { user } = useAuth();
 	const [myClasses, setMyClasses] = useState([]);
 
 	useEffect(() => {
-		fetch('https://final-assignment-server-virid.vercel.app/addedClasses', {
-			method: 'GET',
-			headers: {
-				'content-type': 'application/json',
-			},
-		})
+		fetch(
+			`https://final-assignment-server-virid.vercel.app/addedClasses/${user?.email}`,
+			{
+				method: 'GET',
+				headers: {
+					'content-type': 'application/json',
+				},
+			}
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log(data);

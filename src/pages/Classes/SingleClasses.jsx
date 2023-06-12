@@ -14,7 +14,7 @@ const SingleClasses = ({ classes }) => {
 
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
-	console.log(isAdmin, isInstructor);
+	// console.log(isAdmin, isInstructor);
 
 	const handleUser = () => {
 		Swal.fire({
@@ -59,10 +59,9 @@ const SingleClasses = ({ classes }) => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					if (data.insertedId) {
 						Swal.fire({
-							position: 'top-end',
+							position: 'center',
 							icon: 'success',
 							title: `Class added to cart`,
 							showConfirmButton: false,

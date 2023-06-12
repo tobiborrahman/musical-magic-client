@@ -25,9 +25,9 @@ const SocialLogin = () => {
 		<div className="text-center">
 			<button
 				onClick={handleGooglePopUp}
-				className="btn btn-outline text-white border-none duration-700 w-full text-3xl rounded-none hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]"
+				className="btn text-white border-none duration-700 w-full text-2xl rounded-none hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]"
 			>
-				<FaGoogle></FaGoogle>
+				<FaGoogle></FaGoogle> Sign In With Google
 			</button>
 		</div>
 	);

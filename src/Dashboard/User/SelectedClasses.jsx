@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import SingleSelectedClasses from './SingleSelectedClasses';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const SelectedClasses = () => {
+	const { user } = useAuth();
+
 	const [selectedClasses, setSelectedClasses] = useState([]);
 
 	const total = selectedClasses?.reduce(
@@ -11,7 +14,9 @@ const SelectedClasses = () => {
 	);
 
 	useEffect(() => {
-		fetch('https://final-assignment-server-virid.vercel.app/class')
+		fetch(
+			`https://final-assignment-server-virid.vercel.app/class/${user?.email}`
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log(data);

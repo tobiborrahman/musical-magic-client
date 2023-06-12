@@ -18,12 +18,14 @@ const Login = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm();
 	const onSubmit = (data) => {
 		signIn(data.email, data.password)
 			.then((res) => {
 				console.log(res.user.email);
 				navigate(from, { replace: true });
+				reset();
 			})
 			.catch((err) => {
 				console.log(err.message);
@@ -76,7 +78,7 @@ const Login = () => {
 					</Link>
 
 					<input
-						className="py-2  w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3"
+						className="py-2 w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3"
 						type="submit"
 						value="Login"
 					/>

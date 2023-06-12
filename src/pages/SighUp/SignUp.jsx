@@ -99,7 +99,7 @@ const SignUp = () => {
 
 					<input
 						type="password"
-						className="border py-2 w-full mb-3 pl-3"
+						className="border py-2 w-full pl-3"
 						placeholder="Confirm Password*"
 						{...register('confirmPassword', {
 							required: 'Confirm Password is required',
@@ -108,7 +108,7 @@ const SignUp = () => {
 						})}
 					/>
 
-					<p className="text-red-700 mb-3">
+					<p className="text-red-700">
 						{errors.password && <p>{errors.password.message}</p>}
 					</p>
 
@@ -128,7 +128,7 @@ const SignUp = () => {
 					/>
 
 					<Link to="/login">
-						<p className="text-[#0C4B65] underline mt-3">
+						<p className="text-[#0C4B65] underline">
 							Already Have an Account? Sign In
 						</p>
 					</Link>

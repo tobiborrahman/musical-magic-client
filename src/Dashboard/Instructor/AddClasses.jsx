@@ -15,21 +15,6 @@ const AddClasses = () => {
 		reset,
 	} = useForm();
 	const onSubmit = (data) => {
-		// console.log(data);
-		// axiosSecure.post('/addedClasses', { data }).then((res) => {
-		// 	console.log(res.data);
-		// 	if (res.data.insertedId) {
-		// 		reset(),
-		// 			Swal.fire({
-		// 				position: 'center',
-		// 				icon: 'success',
-		// 				title: 'Data send to the admin',
-		// 				showConfirmButton: false,
-		// 				timer: 1500,
-		// 			});
-		// 	}
-		// });
-
 		fetch('https://final-assignment-server-virid.vercel.app/addedClasses', {
 			method: 'POST',
 			headers: {
@@ -40,6 +25,16 @@ const AddClasses = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
+				if (data.insertedId) {
+					Swal.fire({
+						position: 'center',
+						icon: 'success',
+						title: `Class added to the approved list`,
+						showConfirmButton: false,
+						timer: 1500,
+					});
+					reset();
+				}
 			});
 	};
 	// console.log(errors);
@@ -114,7 +109,7 @@ const AddClasses = () => {
 				/>
 
 				<input
-					className="py-2 px-5 text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 "
+					className="py-2 px-5 w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 "
 					type="submit"
 					value="Add Class"
 				/>

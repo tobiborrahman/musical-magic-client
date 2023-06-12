@@ -14,6 +14,7 @@
 -   @stripe/react-stripe
 -   @stripe/stripe-js
 -   @tanstack/react-query
+-   framer-motion
 -   axios
 
 -   Live site link: https://final-photography-client.web.app/
