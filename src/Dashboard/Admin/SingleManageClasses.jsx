@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { useQuery } from '@tanstack/react-query';
 
 const SingleManageClasses = ({ classes }) => {
 	const [axiosSecure] = useAxiosSecure();
+	const [openModal, setOpenModal] = useState(false);
+	// const { refetch } = useQuery();
+
 	const handleApprove = (id) => {
+		
 		axiosSecure.patch(`/addedClasses/approved/${id}`).then((res) => {
 			console.log(res.data);
+			
 		});
 
 		axiosSecure.post('/approvedClasses', { classes }).then((res) => {
@@ -27,6 +33,10 @@ const SingleManageClasses = ({ classes }) => {
 		axiosSecure.patch(`/addedClasses/denied/${id}`).then((res) => {
 			console.log(res.data);
 		});
+	};
+
+	const handleModal = () => {
+		setOpenModal(true);
 	};
 
 	return (
@@ -87,9 +97,30 @@ const SingleManageClasses = ({ classes }) => {
 					)}
 				</td>
 				<td>
-					<button className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md">
+					{/* <button className=" text-white py-2 px-2 duration-700 font-bold  bg-[#0C4B65] rounded-md">
 						Feedback
+					</button> */}
+					<button
+						className="btn"
+						onClick={() => handleModal(openModal)}
+					>
+						open modal
 					</button>
+					<dialog
+						id="my_modal_5"
+						className="modal modal-bottom sm:modal-middle"
+					>
+						<form method="dialog" className="modal-box">
+							<h3 className="font-bold text-lg">Hello!</h3>
+							<p className="py-4">
+								Press ESC key or click the button below to close
+							</p>
+							<div className="modal-action">
+								{/* if there is a button in form, it will close the modal */}
+								<button className="btn">Close</button>
+							</div>
+						</form>
+					</dialog>
 				</td>
 			</tr>
 		</div>

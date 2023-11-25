@@ -1,9 +1,4 @@
-import React, {
-	useContext,
-	useEffect,
-	useInsertionEffect,
-	useState,
-} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
@@ -41,7 +36,7 @@ const Navbar = () => {
 	}, [theme]);
 
 	return (
-		<div className="md:flex justify-center text-center md:justify-between items-center shadow-md py-3 bg-[#0C4B65]  px-20">
+		<div className="md:flex justify-center text-center md:justify-between items-center sticky top-0 z-10 py-3 bg-[#0C4B65] px-20 shadow-2xl">
 			<div className="flex">
 				<img
 					className="w-10 h-16 mt-1"
@@ -109,6 +104,7 @@ const Navbar = () => {
 						</button>
 					</Link>
 				)}
+
 				<div>
 					{user ? (
 						<img
@@ -119,6 +115,7 @@ const Navbar = () => {
 						''
 					)}
 				</div>
+
 				<label className="swap swap-rotate">
 					{/* this hidden checkbox controls the state */}
 					<input type="checkbox" onChange={handleToggle} />
