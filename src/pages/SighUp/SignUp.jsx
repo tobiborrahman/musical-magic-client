@@ -53,7 +53,7 @@ const SignUp = () => {
 	const password = watch('password');
 
 	return (
-		<div className=" flex justify-center items-center my-20">
+		<div className=" flex justify-center items-center my-20 ">
 			<div className="w-[500px] p-10 border">
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<h1 className="text-center text-[#0C4B65] text-6xl font-bold pb-10">
@@ -128,16 +128,19 @@ const SignUp = () => {
 					/>
 
 					<Link to="/login">
-						<p className="text-[#0C4B65] underline">
+						<p className="text-[#0C4B65] underline py-3">
 							Already Have an Account? Sign In
 						</p>
 					</Link>
 
-					<input
+					{/* <input
 						className="py-2 w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3 "
 						type="submit"
 						value="Sign Up"
-					/>
+					/> */}
+					<button className="relative w-full border-2 border-[#0C4B65] bg-transparent py-2.5 px-5 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#0C4B65] before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100">
+						Sign Up
+					</button>
 				</form>
 				<div className="text-center mt-3">
 					<SocialLogin></SocialLogin>

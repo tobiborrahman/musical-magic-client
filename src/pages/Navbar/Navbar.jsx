@@ -36,7 +36,7 @@ const Navbar = () => {
 	}, [theme]);
 
 	return (
-		<div className="md:flex justify-center text-center md:justify-between items-center sticky top-0 z-10 py-3 bg-[#0C4B65] px-20 shadow-2xl">
+		<div className="container mx-auto md:flex justify-center text-center md:justify-between items-center sticky top-0 z-10 py-3 bg-[#0C4B65] px-20 shadow-2xl">
 			<div className="flex">
 				<img
 					className="w-10 h-16 mt-1"
@@ -92,15 +92,15 @@ const Navbar = () => {
 					<Link to="/login">
 						<button
 							onClick={handleLogOut}
-							className="py-1 px-3 text-white text-xl duration-700 rounded-md hover:text-[#0C4B65] hover:bg-[#EFCF4F] border border-[#EFCF4F]"
+						className="relative border-2 border-[#EFCF4F] bg-transparent py-2.5 px-7 font-medium uppercase text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#EFCF4F] before:transition-transform before:duration-300 before:content-[''] hover:[#0C4B65] before:hover:scale-x-100"
 						>
 							Log Out
 						</button>
 					</Link>
 				) : (
 					<Link to="/login">
-						<button className="py-1 px-3 text-white text-xl duration-700 font-bold rounded-md hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65]">
-							Log In
+						<button className="relative border-2 border-[#EFCF4F] bg-transparent py-2.5 px-8 font-medium uppercase text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#EFCF4F] before:transition-transform before:duration-300 before:content-[''] hover:[#0C4B65] before:hover:scale-x-100">
+							LogIn
 						</button>
 					</Link>
 				)}
@@ -108,21 +108,22 @@ const Navbar = () => {
 				<div>
 					{user ? (
 						<img
-							className="w-12 ml-14 mt-2 md:mt-0 md:ml-2 rounded-full"
+							className="w-12 h-12 ml-14 mt-2 md:mt-0 md:ml-2 rounded-full"
 							src={user?.photoURL}
+							title={user?.displayName}
 						/>
 					) : (
 						''
 					)}
 				</div>
 
-				<label className="swap swap-rotate">
+				<label className="swap swap-rotate ml-3">
 					{/* this hidden checkbox controls the state */}
 					<input type="checkbox" onChange={handleToggle} />
 
 					{/* sun icon */}
 					<svg
-						className="swap-on fill-current w-10 h-10"
+						className="swap-on fill-current w-12 h-12 text-white"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 					>
@@ -131,7 +132,7 @@ const Navbar = () => {
 
 					{/* moon icon */}
 					<svg
-						className="swap-off fill-current w-10 h-10"
+						className="swap-off fill-current w-12 h-12 text-white"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 					>

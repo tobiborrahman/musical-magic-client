@@ -54,34 +54,37 @@ const Login = () => {
 						})}
 					/>
 					<br />
-					<input
-						type={showPassword ? 'password' : 'text'}
-						className="border py-2 w-full pl-3"
-						placeholder="Password"
-						onClick={handleTogglePassword}
-						{...register('password', {
-							required: true,
-						})}
-					/>
-					<p className="mt-2" onClick={handleTogglePassword}>
-						{showPassword ? (
-							<FaEye className="text-2xl"></FaEye>
-						) : (
-							<FaEyeSlash className="text-2xl"></FaEyeSlash>
-						)}
-					</p>
+
+					<div className="relative flex">
+						<input
+							type={showPassword ? 'password' : 'text'}
+							className="border py-2 w-full pl-3 pr-10" // Added pr-10 for padding on the right
+							placeholder="Password"
+							{...register('password', {
+								required: true,
+							})}
+						/>
+						<p
+							className="absolute inset-y-0 right-0 mt-2 mr-4 cursor-pointer"
+							onClick={handleTogglePassword}
+						>
+							{showPassword ? (
+								<FaEye className="text-2xl"></FaEye>
+							) : (
+								<FaEyeSlash className="text-2xl"></FaEyeSlash>
+							)}
+						</p>
+					</div>
 
 					<Link to="/signUp">
-						<p className="text-[#0C4B65] underline">
+						<p className="text-[#0C4B65] underline py-4">
 							Don't Have an Account? Please Sign Up
 						</p>
 					</Link>
 
-					<input
-						className="py-2 w-full text-white text-2xl duration-700 font-bold hover:text-[#0C4B65] hover:bg-[#EFCF4F] bg-[#0C4B65] mt-3"
-						type="submit"
-						value="Login"
-					/>
+					<button className="relative w-full border-2 border-[#0C4B65] bg-transparent py-2.5 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#0C4B65] before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100">
+						Login
+					</button>
 				</form>
 				<div className="text-center mt-3">
 					<SocialLogin></SocialLogin>

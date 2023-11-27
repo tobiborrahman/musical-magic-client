@@ -28,7 +28,7 @@ const Categories = () => {
 						delay: 3000,
 						disableOnInteraction: false,
 					}}
-					className="mySwiper"
+					className="mySwiper grid grid-cols-1 md:grid-cols-4"
 				>
 					<SwiperSlide className="relative group">
 						<img
@@ -157,7 +157,7 @@ const Categories = () => {
 						</div>
 					</SwiperSlide>
 
-					<div className="flex justify-end">
+					<div className="flex justify-center md:justify-end">
 						<UseSwiper />
 					</div>
 				</Swiper>
