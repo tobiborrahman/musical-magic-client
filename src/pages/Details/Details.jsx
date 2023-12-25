@@ -1,10 +1,13 @@
 import React from 'react';
+import { CountUp } from 'use-count-up';
 
 const Details = () => {
 	return (
 		<div className="bg-[#0C4B65] md:flex justify-between items-center text-white px-28 py-20">
 			<div className="text-center">
-				<h1 className="text-5xl font-bold">100%</h1>
+				<h1 className="text-5xl font-bold">
+					<CountUp isCounting end={100} duration={3} />%
+				</h1>
 				<h4 className="text-2xl font-semibold mt-3">Success Rate</h4>
 			</div>
 			<div>
