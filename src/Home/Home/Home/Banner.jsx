@@ -1,20 +1,22 @@
 import React from 'react';
-// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 
-// SwiperCore.use([Navigation, Pagination, Autoplay]);
-
 const Banner = () => {
 	return (
-		<div>
+		<div className="container">
 			<Swiper
 				slidesPerView={1}
-				navigation
-				pagination={{ clickable: true }}
-				autoplay={{ delay: 3000 }}
+				autoplay={{
+					delay: 2500,
+					disableOnInteraction: false,
+				}}
+				loop={true}
+				modules={[Autoplay, Pagination, Navigation]}
 			>
 				<SwiperSlide>
 					<img
