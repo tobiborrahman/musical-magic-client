@@ -20,11 +20,12 @@ const SignUp = () => {
 			.then((res) => {
 				console.log('create user', res.user);
 
-				updateUserProfile(data.name, data.photoUrl)
+				updateUserProfile(data.name, data.photoUrl, data.expert)
 					.then(() => {
 						const user = {
 							name: data.name,
 							photo: data.photoUrl,
+							expert: data.expert,
 							email: data.email,
 						};
 						fetch(
@@ -64,6 +65,16 @@ const SignUp = () => {
 						className="border py-2 w-full mb-3 pl-3"
 						placeholder="Name*"
 						{...register('name', {
+							required: true,
+							maxLength: 80,
+						})}
+					/>
+					<br />
+					<input
+						type="text"
+						className="border py-2 w-full mb-3 pl-3"
+						placeholder="Expert of*"
+						{...register('expert', {
 							required: true,
 							maxLength: 80,
 						})}

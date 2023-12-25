@@ -23,7 +23,7 @@ const PopularClasses = () => {
 				subHeading="Our Classes"
 			></SectionTitle>
 
-			<div className="grid md:grid-cols-3 gap-8 mx-10 mt-2">
+			<div className="grid md:grid-cols-3 gap-8 md:mx-10 mx-3 mt-2">
 				{homeClasses.map((classes) => (
 					<>
 						<div className="md:w-[380px] rounded-lg boxShadow border-b-[3px] border-b-[#C25934] ">
