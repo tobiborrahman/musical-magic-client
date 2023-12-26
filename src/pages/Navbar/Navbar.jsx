@@ -38,7 +38,7 @@ const Navbar = () => {
 	}, [theme]);
 
 	return (
-		<div className="md:flex md:text-center md:justify-between md:items-center sticky top-0 z-10 py-3 bg-[#0C4B65] px-9 md:px-20 shadow-2xl">
+		<div className="md:flex md:text-center md:justify-between md:items-center sticky top-0 z-10 py-3 bg-[#0C4B65] px-9 md:px-20 shadow-lg">
 			<div className="flex">
 				<img
 					className="w-10 md:h-16 h-14  mt-1"
@@ -57,8 +57,7 @@ const Navbar = () => {
 			>
 				{open ? <MdClose /> : <MdMenu />}
 			</div>
-			{/* ${open ? 'top-20' : 'top[-490]'} */}
-			{/* md:z-auto z-[-1] */}
+
 			<div
 				className={`absolute md:static bg-[#0C4B65] md:pb-0 pb-12  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500  ${
 					open ? 'top-20 opacity-100' : 'top[-490px]'
@@ -133,7 +132,6 @@ const Navbar = () => {
 						</div>
 
 						<label className="swap md:pt-0 pt-3 swap-rotate md:pl-3">
-							{/* this hidden checkbox controls the state */}
 							<input type="checkbox" onChange={handleToggle} />
 
 							{/* sun icon */}
