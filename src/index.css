@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	html,
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: -apple-system, 'Outfit', 'Roboto', sans-serif,
+			'Atyp Display', Proxima Nova, system-ui, BlinkMacSystemFont,
+			Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+			Helvetica Neue, sans-serif;
+		scroll-behavior: smooth;
+		box-sizing: border-box;
+		background-color: #ffffff;
+		font-family: 'Roboto', sans-serif;
+		overflow-x: hidden;
+		min-height: 901px;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@layer components {
+	.custom-container {
+		@apply max-w-[1320px] mx-auto px-[30px] lg:px-5 sm:px-[15px];
+	}
+}
+
 .boxShadow2 {
 	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
 }

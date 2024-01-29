@@ -37,7 +37,7 @@ const AddClasses = () => {
 				}
 			});
 	};
-	// console.log(errors);
+	console.log(errors);
 
 	return (
 		<div className="flex justify-center items-center my-20">

@@ -39,130 +39,132 @@ const Categories = () => {
 				subHeading="welcome to magical music"
 			></SectionTitle>
 
-			<div className="container">
-				<Swiper
-					autoplay={{
-						delay: 2500,
-						disableOnInteraction: false,
-					}}
-					loop={true}
-					{...swiperConfig}
-					modules={[Autoplay, Pagination, Navigation]}
-					className="mySwiper"
-				>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={percussions}
-							alt=""
-						/>
+			<div className="custom-container">
+				<div className="container">
+					<Swiper
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						loop={true}
+						{...swiperConfig}
+						modules={[Autoplay, Pagination, Navigation]}
+						className="mySwiper"
+					>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={percussions}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Percussions
-								</h2>
-								<p className="text-xl font-semibold">
-									5 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Percussions
+									</h2>
+									<p className="text-xl font-semibold">
+										5 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={saxophone}
-							alt=""
-						/>
+						</SwiperSlide>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={saxophone}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Saxophone
-								</h2>
-								<p className="text-xl font-semibold">
-									3 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Saxophone
+									</h2>
+									<p className="text-xl font-semibold">
+										3 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={trumpet}
-							alt=""
-						/>
+						</SwiperSlide>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={trumpet}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Trumpet
-								</h2>
-								<p className="text-xl font-semibold">
-									2 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Trumpet
+									</h2>
+									<p className="text-xl font-semibold">
+										2 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={flute}
-							alt=""
-						/>
+						</SwiperSlide>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={flute}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Flute
-								</h2>
-								<p className="text-xl font-semibold">
-									7 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Flute
+									</h2>
+									<p className="text-xl font-semibold">
+										7 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={drums}
-							alt=""
-						/>
+						</SwiperSlide>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={drums}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Drums
-								</h2>
-								<p className="text-xl font-semibold">
-									4 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Drums
+									</h2>
+									<p className="text-xl font-semibold">
+										4 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className="relative group">
-						<img
-							className="md:w-[280px] w-full h-[280px] rounded-lg"
-							src={violin}
-							alt=""
-						/>
+						</SwiperSlide>
+						<SwiperSlide className="relative group">
+							<img
+								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								src={violin}
+								alt=""
+							/>
 
-						<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
-							<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
-								<h2 className="text-2xl font-semibold">
-									Violin
-								</h2>
-								<p className="text-xl font-semibold">
-									9 courses
-								</p>
+							<div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg flex items-center justify-center ">
+								<div className="text-center transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-300">
+									<h2 className="text-2xl font-semibold">
+										Violin
+									</h2>
+									<p className="text-xl font-semibold">
+										9 courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
+						</SwiperSlide>
 
-					<div className="flex justify-center md:justify-end">
-						<UseSwiper />
-					</div>
-				</Swiper>
+						<div className="flex justify-center md:justify-end md:mr-5 md:mt-2">
+							<UseSwiper />
+						</div>
+					</Swiper>
+				</div>
 			</div>
 		</div>
 	);
