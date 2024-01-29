@@ -35,48 +35,50 @@ const Instructors = () => {
 				subHeading="Instructors"
 			></SectionTitle>
 
-			<div className="md:flex justify-center items-center gap-5 pb-20">
-				{homeInstructors.map((instructor) => (
-					<>
-						<div className="text-center md:mx-0 mx-3 mb-7 md:mb-0 md:w-[260px] md:h-[350px] p-5 rounded-md bg-white boxShadow2 boxShadow hover:bg-[#0C4B65] hover:text-white duration-500">
-							<div className="flex justify-center items-center relative overflow-hidden">
-								<img
-									className=" md:w-[150px] md:h-[150px] rounded-full border-4 border-transparent hover:border-[#C25934] transition duration-500 p-1"
-									src={instructor.photo}
-									alt=""
-								/>
-							</div>
+			<div className="custom-container">
+				<div className="md:flex justify-center items-center gap-5 pb-20">
+					{homeInstructors.map((instructor) => (
+						<>
+							<div className="text-center md:mx-0 mx-3 mb-7 md:mb-0 md:w-[260px] md:h-[350px] p-5 rounded-md bg-white boxShadow2 boxShadow hover:bg-[#0C4B65] hover:text-white duration-500">
+								<div className="flex justify-center items-center relative overflow-hidden">
+									<img
+										className=" md:w-[150px] md:h-[150px] rounded-full border-4 border-transparent hover:border-[#C25934] transition duration-500 p-1"
+										src={instructor.photo}
+										alt=""
+									/>
+								</div>
 
-							<h3 className="text-2xl text-center font-bold text-[#C25934] pt-3">
-								{instructor.name}
-							</h3>
-							<p className="text-center font-bold ">
-								{instructor.expert} Expert
-							</p>
+								<h3 className="text-2xl text-center font-bold text-[#C25934] pt-3">
+									{instructor.name}
+								</h3>
+								<p className="text-center font-bold ">
+									{instructor.expert} Expert
+								</p>
 
-							<div className="flex justify-center items-center pt-4">
-								<div className="w-14 h-2 border-t-[3px] border-[#C25934]"></div>
-							</div>
-							<p className="flex justify-evenly items-center pt-3">
-								<FaFacebook className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaFacebook>
-								<FaInstagram className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaInstagram>
-								<FaTwitter className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaTwitter>
-								<FaLinkedin className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none" />
-							</p>
-							<div className="flex justify-between items-center pt-1">
-								<p className="flex justify-center items-center">
-									<FaStar className="text-[#C25934] mr-1" />{' '}
-									4.8 (12K)
+								<div className="flex justify-center items-center pt-4">
+									<div className="w-14 h-2 border-t-[3px] border-[#C25934]"></div>
+								</div>
+								<p className="flex justify-evenly items-center pt-3">
+									<FaFacebook className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaFacebook>
+									<FaInstagram className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaInstagram>
+									<FaTwitter className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none"></FaTwitter>
+									<FaLinkedin className="text-xl border rounded-full w-8 h-8 p-1 hover:bg-[#C25934] hover:border-none" />
 								</p>
-								<p className="flex justify-center items-center">
-									{' '}
-									<FaMusic className="text-[#C25934] mr-1" />{' '}
-									12 Courses
-								</p>
+								<div className="flex justify-between items-center pt-1">
+									<p className="flex justify-center items-center">
+										<FaStar className="text-[#C25934] mr-1" />{' '}
+										4.8 (12K)
+									</p>
+									<p className="flex justify-center items-center">
+										{' '}
+										<FaMusic className="text-[#C25934] mr-1" />{' '}
+										12 Courses
+									</p>
+								</div>
 							</div>
-						</div>
-					</>
-				))}
+						</>
+					))}
+				</div>
 			</div>
 		</div>
 	);
