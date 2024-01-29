@@ -9,10 +9,8 @@ const SingleManageClasses = ({ classes }) => {
 	// const { refetch } = useQuery();
 
 	const handleApprove = (id) => {
-		
 		axiosSecure.patch(`/addedClasses/approved/${id}`).then((res) => {
 			console.log(res.data);
-			
 		});
 
 		axiosSecure.post('/approvedClasses', { classes }).then((res) => {

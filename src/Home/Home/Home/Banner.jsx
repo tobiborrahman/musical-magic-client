@@ -19,11 +19,13 @@ const Banner = () => {
 					modules={[Autoplay, Pagination, Navigation]}
 				>
 					<SwiperSlide>
-						<img
-							className="w-full h-[600px]"
-							src="https://i.ibb.co/qMHtPbd/aliane-schwartzhaupt-Qdm-Uva6q-BTk-unsplash.jpg"
-							alt="Image 1"
-						/>
+						<div className="bg-gradient-to-r from-black/70 to-black/70">
+							<img
+								className="w-full h-[600px] object-cover mix-blend-overlay"
+								src="https://i.ibb.co/bz7mw7r/music-2.jpg"
+								alt="Image 2"
+							/>
+						</div>
 
 						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
 							<div className="custom-container">
@@ -41,11 +43,14 @@ const Banner = () => {
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
-						<img
-							className="w-full h-[600px]"
-							src="https://i.ibb.co/VpMj7Bh/saxophone.jpg"
-							alt="Image 2"
-						/>
+						<div className="bg-gradient-to-r from-black/80 to-black/70">
+							<img
+								className="w-full h-[600px] object-cover mix-blend-overlay"
+								src="https://i.ibb.co/Z6Z2cMS/music-7.jpg"
+								alt="Image 2"
+							/>
+						</div>
+
 						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
 							<div className="custom-container">
 								<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
@@ -62,11 +67,13 @@ const Banner = () => {
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
-						<img
-							className="w-full h-[600px]"
-							src=" https://i.ibb.co/cQyQJ5p/keys.jpg"
-							alt="Image 3"
-						/>
+						<div className="bg-gradient-to-r from-black/70 to-black/70">
+							<img
+								className="w-full h-[600px] object-cover mix-blend-overlay"
+								src="https://i.ibb.co/Y2GgHDX/music-9.jpg"
+								alt="Image 3"
+							/>
+						</div>
 						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
 							<div className="custom-container">
 								<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
