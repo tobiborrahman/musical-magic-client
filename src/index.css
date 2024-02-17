@@ -24,7 +24,7 @@
 
 @layer components {
 	.custom-container {
-		@apply max-w-[1320px] mx-auto px-[30px] lg:px-5 sm:px-[15px];
+		@apply max-w-[1320px] mx-auto px-[10px] lg:px-5 sm:px-[15px];
 	}
 }
 

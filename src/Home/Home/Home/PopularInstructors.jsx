@@ -36,13 +36,13 @@ const Instructors = () => {
 			></SectionTitle>
 
 			<div className="custom-container">
-				<div className="md:flex justify-center items-center gap-5 pb-20">
+				<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 pb-20">
 					{homeInstructors.map((instructor) => (
 						<>
-							<div className="text-center md:mx-0 mx-3 mb-7 md:mb-0 md:w-[260px] md:h-[350px] p-5 rounded-md bg-white boxShadow2 boxShadow hover:bg-[#0C4B65] hover:text-white duration-500">
+							<div className="text-center md:mx-0 mx-3 mb-7 p-5 rounded-md bg-white boxShadow2 boxShadow hover:bg-[#0C4B65] hover:text-white duration-500">
 								<div className="flex justify-center items-center relative overflow-hidden">
 									<img
-										className=" md:w-[150px] md:h-[150px] rounded-full border-4 border-transparent hover:border-[#C25934] transition duration-500 p-1"
+										className="w-[250px] h-[250px] rounded-full border-4 border-transparent hover:border-[#C25934] transition duration-500 p-1"
 										src={instructor.photo}
 										alt=""
 									/>
