@@ -2,9 +2,9 @@ import CountUp from 'react-countup';
 
 const Details = () => {
 	return (
-		<div className="bg-[#0C4B65]">
+		<div className="bg-[#0C4B65] mt-10">
 			<div className="custom-container">
-				<div className=" md:flex justify-between items-center text-white px-28 xl:px-10 py-20">
+				<div className=" md:flex justify-between items-center text-white py-20">
 					<div className="text-center">
 						<h1 className="text-5xl font-bold">
 							<CountUp
@@ -20,8 +20,8 @@ const Details = () => {
 							Success Rate
 						</h4>
 					</div>
-					<div>
-						<div className="w-48 h-[.1] my-8 md:my-0 border-t-[3px] md:w-0 md:border-t-0 border-[0.2px] border-gray-500 md:h-[100px]"></div>
+					<div className="flex justify-center items-center">
+						<div className="w-48 h-[.1px] my-8 md:my-0 border-t-[3px] md:w-0 md:border-t-0 border-[0.2px] border-gray-500 md:h-[100px]"></div>
 					</div>
 					<div className="text-center">
 						<h1 className="text-5xl font-bold">
@@ -38,7 +38,7 @@ const Details = () => {
 							Years of Service
 						</h4>
 					</div>
-					<div>
+					<div className="flex justify-center items-center">
 						<div className="w-48 h-[.1] my-8 md:my-0 border-t-[3px] md:w-0 md:border-t-0 border-[0.2px] border-gray-500 md:h-[100px]"></div>
 					</div>
 					<div className="text-center">
@@ -56,7 +56,7 @@ const Details = () => {
 							Students
 						</h4>
 					</div>
-					<div>
+					<div className="flex justify-center items-center">
 						<div className="w-48 h-[.1] my-8 md:my-0 border-t-[3px] md:w-0 md:border-t-0 border-[0.2px] border-gray-500 md:h-[100px]"></div>
 					</div>
 					<div className="text-center">

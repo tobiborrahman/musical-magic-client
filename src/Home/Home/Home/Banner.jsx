@@ -18,74 +18,99 @@ const Banner = () => {
 					loop={true}
 					modules={[Autoplay, Pagination, Navigation]}
 				>
-					<SwiperSlide>
-						<div className="bg-gradient-to-r from-black/70 to-black/70">
-							<img
-								className="w-full h-[600px] object-cover mix-blend-overlay"
-								src="https://i.ibb.co/bz7mw7r/music-2.jpg"
-								alt="Image 2"
-							/>
-						</div>
-
-						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
-							<div className="custom-container">
-								<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
-									Let Life Be Tuneful
-								</h1>
-								<p className="text-white md:text-center text-justify md:px-56 px-6">
-									Learning a musical instrument also fosters a
-									sense of accomplishment and confidence as
-									skills improve, and can create opportunities
-									for personal growth, performance, and
-									collaboration with other musicians.
-								</p>
+					<SwiperSlide
+						style={{
+							backgroundImage:
+								'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://i.ibb.co/bz7mw7r/music-2.jpg")',
+							backgroundSize: 'cover, cover',
+							backgroundRepeat: 'no-repeat',
+							backgroundPosition: 'center, center',
+							objectFit: 'contain',
+							height: '100vh',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<div className="">
+							<div className="max-w-[700px]">
+								<div className="text-center">
+									<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
+										Let Life Be Tuneful
+									</h1>
+									<p className="text-white md:text-center text-center px-6">
+										Learning a musical instrument fosters a
+										sense of accomplishment and confidence
+										as skills improve, creating
+										opportunities for personal growth,
+										performance, and collaboration with
+										other musicians.
+									</p>
+								</div>
 							</div>
 						</div>
 					</SwiperSlide>
-					<SwiperSlide>
-						<div className="bg-gradient-to-r from-black/80 to-black/70">
-							<img
-								className="w-full h-[600px] object-cover mix-blend-overlay"
-								src="https://i.ibb.co/Z6Z2cMS/music-7.jpg"
-								alt="Image 2"
-							/>
-						</div>
-
-						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
-							<div className="custom-container">
-								<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
-									Let Life Be Tuneful
-								</h1>
-								<p className="text-white md:text-center text-justify md:px-56 px-6">
-									Learning a musical instrument also fosters a
-									sense of accomplishment and confidence as
-									skills improve, and can create opportunities
-									for personal growth, performance, and
-									collaboration with other musicians.
-								</p>
+					<SwiperSlide
+						style={{
+							backgroundImage:
+								'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://i.ibb.co/Z6Z2cMS/music-7.jpg")',
+							backgroundSize: 'cover, cover',
+							backgroundRepeat: 'no-repeat',
+							backgroundPosition: 'center, center',
+							objectFit: 'contain',
+							height: '100vh',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<div className="">
+							<div className="max-w-[700px]">
+								<div className="text-center">
+									<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
+										Let Life Be Tuneful
+									</h1>
+									<p className="text-white md:text-center text-center px-6">
+										Learning a musical instrument fosters a
+										sense of accomplishment and confidence
+										as skills improve, creating
+										opportunities for personal growth,
+										performance, and collaboration with
+										other musicians.
+									</p>
+								</div>
 							</div>
 						</div>
 					</SwiperSlide>
-					<SwiperSlide>
-						<div className="bg-gradient-to-r from-black/70 to-black/70">
-							<img
-								className="w-full h-[600px] object-cover mix-blend-overlay"
-								src="https://i.ibb.co/Y2GgHDX/music-9.jpg"
-								alt="Image 3"
-							/>
-						</div>
-						<div className="absolute top-[37%]  2xl:left-[24%]  text-center">
-							<div className="custom-container">
-								<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
-									Let Life Be Tuneful
-								</h1>
-								<p className="text-white md:text-center text-justify md:px-56 px-6">
-									Learning a musical instrument also fosters a
-									sense of accomplishment and confidence as
-									skills improve, and can create opportunities
-									for personal growth, performance, and
-									collaboration with other musicians.
-								</p>
+					<SwiperSlide
+						style={{
+							backgroundImage:
+								'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://i.ibb.co/Y2GgHDX/music-9.jpg")',
+							backgroundSize: 'cover, cover',
+							backgroundRepeat: 'no-repeat',
+							backgroundPosition: 'center, center',
+							objectFit: 'contain',
+							height: '100vh',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<div className="">
+							<div className="max-w-[700px]">
+								<div className="text-center">
+									<h1 className="md:text-7xl text-3xl pb-3 font-bold text-[#EFCF4F]">
+										Let Life Be Tuneful
+									</h1>
+									<p className="text-white md:text-center text-center px-6">
+										Learning a musical instrument fosters a
+										sense of accomplishment and confidence
+										as skills improve, creating
+										opportunities for personal growth,
+										performance, and collaboration with
+										other musicians.
+									</p>
+								</div>
 							</div>
 						</div>
 					</SwiperSlide>

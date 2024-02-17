@@ -33,7 +33,7 @@ const Categories = () => {
 	};
 
 	return (
-		<div className="md:px-10 px-3 py-10 bg-gray-100">
+		<div className=" px-3 py-10 bg-gray-100">
 			<SectionTitle
 				heading="course categories"
 				subHeading="welcome to magical music"
@@ -53,7 +53,7 @@ const Categories = () => {
 					>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={percussions}
 								alt=""
 							/>
@@ -71,7 +71,7 @@ const Categories = () => {
 						</SwiperSlide>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={saxophone}
 								alt=""
 							/>
@@ -89,7 +89,7 @@ const Categories = () => {
 						</SwiperSlide>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={trumpet}
 								alt=""
 							/>
@@ -107,7 +107,7 @@ const Categories = () => {
 						</SwiperSlide>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={flute}
 								alt=""
 							/>
@@ -125,7 +125,7 @@ const Categories = () => {
 						</SwiperSlide>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={drums}
 								alt=""
 							/>
@@ -143,7 +143,7 @@ const Categories = () => {
 						</SwiperSlide>
 						<SwiperSlide className="relative group">
 							<img
-								className="md:w-[280px] w-full h-[280px] rounded-lg"
+								className="md:w-[300px] w-full h-[300px] rounded-lg"
 								src={violin}
 								alt=""
 							/>
@@ -160,7 +160,7 @@ const Categories = () => {
 							</div>
 						</SwiperSlide>
 
-						<div className="flex justify-center md:justify-end md:mr-5 md:mt-2">
+						<div className="flex justify-center md:justify-end md:mt-2">
 							<UseSwiper />
 						</div>
 					</Swiper>
