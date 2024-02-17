@@ -16,33 +16,35 @@ const Instructors = () => {
 	}, []);
 
 	return (
-		<div className="px-20">
+		<div className="">
 			<SectionTitle
 				heading="All the Instructors"
 				subHeading="Instructors"
 			></SectionTitle>
 
-			<div className="gap-5 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-				{instructors.map((instructor) => (
-					<>
-						<div>
-							<div className="flex justify-center items-center">
-								<img
-									className="w-[200px] h-[200px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
-									src={instructor.photo}
-									alt=""
-								/>
-							</div>
+			<div className="custom-container">
+				<div className="gap-5 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+					{instructors.map((instructor) => (
+						<>
+							<div>
+								<div className="flex justify-center items-center">
+									<img
+										className="w-[280px] h-[280px] rounded-full border p-2 hover:border-[10px] hover:border-[#EFCF4F] hover:p-2 duration-500"
+										src={instructor.photo}
+										alt=""
+									/>
+								</div>
 
-							<h3 className="text-2xl text-center font-bold text-[#C25934]">
-								{instructor.name}
-							</h3>
-							<p className="text-center font-bold text-[#0C4B65]">
-								{instructor.email}
-							</p>
-						</div>
-					</>
-				))}
+								<h3 className="text-2xl text-center font-bold text-[#C25934]">
+									{instructor.name}
+								</h3>
+								<p className="text-center font-bold text-[#0C4B65]">
+									{instructor.email}
+								</p>
+							</div>
+						</>
+					))}
+				</div>
 			</div>
 		</div>
 	);

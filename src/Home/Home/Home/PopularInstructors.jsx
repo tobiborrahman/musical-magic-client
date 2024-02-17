@@ -36,7 +36,7 @@ const Instructors = () => {
 			></SectionTitle>
 
 			<div className="custom-container">
-				<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 pb-20">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pb-20">
 					{homeInstructors.map((instructor) => (
 						<>
 							<div className="text-center md:mx-0 mx-3 mb-7 p-5 rounded-md bg-white boxShadow2 boxShadow hover:bg-[#0C4B65] hover:text-white duration-500">

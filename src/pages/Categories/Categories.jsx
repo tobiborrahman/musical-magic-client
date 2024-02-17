@@ -24,7 +24,7 @@ const Categories = () => {
 
 		breakpoints: {
 			640: {
-				slidesPerView: 2,
+				slidesPerView: 3,
 			},
 			1024: {
 				slidesPerView: 4,
@@ -33,7 +33,7 @@ const Categories = () => {
 	};
 
 	return (
-		<div className=" px-3 py-10 bg-gray-100">
+		<div className="px-3 py-10 bg-gray-100">
 			<SectionTitle
 				heading="course categories"
 				subHeading="welcome to magical music"

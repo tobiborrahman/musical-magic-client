@@ -11,7 +11,7 @@ const Footer = () => {
 			<div className="bg-[#0C4B65]">
 				<div className="custom-container">
 					<div className="text-white pb-5 px-[15px]">
-						<div className="md:flex justify-between py-10 text-white">
+						<div className="flex flex-wrap justify-between py-10 text-white">
 							<div>
 								<div>
 									<h4 className="text-xl font-bold pb-4">
