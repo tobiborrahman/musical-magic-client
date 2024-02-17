@@ -39,7 +39,7 @@ const Navbar = () => {
 
 	return (
 		<div className="bg-[#0C4B65] shadow-b-md">
-			<div className="custom-container">
+			<div className="md:custom-container">
 				<div className="md:flex md:text-center md:justify-between md:items-center sticky top-0 z-10 py-3 px-3 ">
 					<div className="flex">
 						<img

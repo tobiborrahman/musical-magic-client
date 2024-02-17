@@ -20,13 +20,15 @@ const ApprovedClasses = () => {
 				subHeading="Our Classes"
 			></SectionTitle>
 
-			<div className="grid md:grid-cols-3 gap-5 mx-10 mb-20">
-				{allClasses.map((classes) => (
-					<SingleClasses
-						key={classes._id}
-						classes={classes.classes}
-					></SingleClasses>
-				))}
+			<div className="custom-container">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
+					{allClasses.map((classes) => (
+						<SingleClasses
+							key={classes._id}
+							classes={classes.classes}
+						></SingleClasses>
+					))}
+				</div>
 			</div>
 		</div>
 	);

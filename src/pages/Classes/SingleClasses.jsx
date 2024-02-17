@@ -74,10 +74,10 @@ const SingleClasses = ({ classes }) => {
 
 	return (
 		<div>
-			<div className="card w-96 h-[500px] glass">
+			<div className="card rounded-lg glass">
 				<figure>
 					<img
-						className="h-[250px] w-full hover:scale-150 overflow-hidden duration-500"
+						className="rounded-t-lg h-[250px] hover:scale-150 overflow-hidden duration-500"
 						src={photoUrl}
 						alt="car!"
 					/>
