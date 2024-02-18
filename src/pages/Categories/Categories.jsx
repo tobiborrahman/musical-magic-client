@@ -10,6 +10,8 @@ import UseSwiper from './UseSwiper';
 
 import './Categories.css';
 
+// This is the images used in the swiper js
+
 import percussions from '../../../src/assets/percussions (1).jpg';
 import trumpet from '../../../src/assets/trumpet (1).jpg';
 import saxophone from '../../../src/assets/saxophone (1).jpg';
